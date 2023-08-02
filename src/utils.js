@@ -15,7 +15,7 @@ const colorVariants = [
   '950',
 ]
 
-const generateColorUtilities = () => {
+const generateColorUtilities = (property, prefix) => {
   const utils = {}
   const getVariant = (variant) => parseInt(variant) / 100
   const colorsWithVariants = Object.keys(colors).filter(
@@ -23,8 +23,8 @@ const generateColorUtilities = () => {
   )
   for (const color of colorsWithVariants) {
     for (const variant of colorVariants) {
-      utils[`.c-${color}-${getVariant(variant)}`] = {
-        color: colors[color][variant],
+      utils[`.${prefix}-${color}-${getVariant(variant)}`] = {
+        [property]: colors[color][variant],
       }
     }
   }

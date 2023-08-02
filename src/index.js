@@ -67,7 +67,41 @@ module.exports = plugin(function ({ addUtilities, addComponents, e, config }) {
     '.p-f': {
       position: 'fixed',
     },
-    ...generateColorUtilities(),
+
+    /* color */
+    // ...generateColorUtilities('color', '.c'),
+
+    /* background-color */
+    // ...generateColorUtilities('background-color', '.bgc'),
+
+    /* background-position */
+    '.bgp-c': {
+      backgroundPosition: 'center',
+    },
+    '.bgp-t': {
+      backgroundPosition: 'top',
+    },
+    '.bgp-b': {
+      backgroundPosition: 'bottom',
+    },
+    '.bgp-l': {
+      backgroundPosition: 'left',
+    },
+    '.bgp-r': {
+      backgroundPosition: 'right',
+    },
+    '.bgp-lt': {
+      backgroundPosition: 'left top',
+    },
+    '.bgp-lb': {
+      backgroundPosition: 'left bottom',
+    },
+    '.bgp-rt': {
+      backgroundPosition: 'right top',
+    },
+    '.bgp-rb': {
+      backgroundPosition: 'right bottom',
+    },
   }
   addUtilities(newUtilities)
 })
