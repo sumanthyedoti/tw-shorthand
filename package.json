@@ -1,0 +1,12 @@
+{
+  "name": "tw-shorthand",
+  "version": "1.0.0",
+  "description": "A tailwind plugin that defines shorthand for classes where possible",
+  "main": "src/index.js",
+  "repository": "https://github.com/sumanthyedoti/tw-shorthand",
+  "author": "Sumanth Yedoti",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}

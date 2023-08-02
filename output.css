@@ -1,0 +1,7 @@
+.hello {
+  width: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  color: #f87171
+}

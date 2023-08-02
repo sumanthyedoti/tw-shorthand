@@ -1,0 +1,5 @@
+@import 'tailwindcss/utilities';
+
+.hello {
+  @apply d-f f-r w-10 p-a c-red-4;
+}
