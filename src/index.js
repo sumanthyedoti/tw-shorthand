@@ -114,6 +114,48 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
       backgroundPosition: 'right bottom',
     },
 
+    /* text-align */
+    't-right': {
+      textAlign: 'right',
+    },
+    't-left': {
+      textAlign: 'left',
+    },
+    't-center': {
+      textAlign: 'center',
+    },
+    't-justify': {
+      textAlign: 'justify',
+    },
+    't-start': {
+      textAlign: 'start',
+    },
+    't-end': {
+      textAlign: 'end',
+    },
+
+    /* text-overflow */
+    't-ellipsis': {
+      textAlign: 'ellipsis',
+    },
+    't-clip': {
+      textAlign: 'clip',
+    },
+
+    /* text-tranform */
+    'tt-up': {
+      textTransform: 'uppercase',
+    },
+    'tt-low': {
+      textTransform: 'lowercase',
+    },
+    'tt-cap': {
+      textTransform: 'capitalizer',
+    },
+    'tt-no': {
+      textTransform: 'none',
+    },
+
     /* pointer-events */
     '.pe-no': {
       pointerEvents: 'none',
