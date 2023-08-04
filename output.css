@@ -1,16 +1,4 @@
-.hello:hover {
-  display: flex;
-  flex-direction: row;
-}
-
-.hello:focus {
-  justify-content: flex-start;
-}
-
-.hello:visited {
-  display: block;
-}
-
-.hello:link {
-  color: #fee2e2;
+.hello {
+  border-left-width: 7px;
+  border-right-width: 7px
 }

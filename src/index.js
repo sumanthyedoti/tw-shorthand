@@ -1,6 +1,10 @@
 const plugin = require('tailwindcss/plugin')
 
-const { generateColorUtilities } = require('./utils')
+const {
+  generateColorUtilities,
+  generateBorderWidths,
+  generateBorderWidthsForSides,
+} = require('./utils')
 
 module.exports = plugin(function ({ addUtilities, addVariant }) {
   const newUtilities = {
@@ -115,44 +119,44 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     },
 
     /* text-align */
-    't-right': {
+    '.t-right': {
       textAlign: 'right',
     },
-    't-left': {
+    '.t-left': {
       textAlign: 'left',
     },
-    't-center': {
+    '.t-center': {
       textAlign: 'center',
     },
-    't-justify': {
+    '.t-justify': {
       textAlign: 'justify',
     },
-    't-start': {
+    '.t-start': {
       textAlign: 'start',
     },
-    't-end': {
+    '.t-end': {
       textAlign: 'end',
     },
 
     /* text-overflow */
-    't-ellipsis': {
+    '.t-ellipsis': {
       textAlign: 'ellipsis',
     },
-    't-clip': {
+    '.t-clip': {
       textAlign: 'clip',
     },
 
     /* text-tranform */
-    'tt-up': {
+    '.tt-up': {
       textTransform: 'uppercase',
     },
-    'tt-low': {
+    '.tt-low': {
       textTransform: 'lowercase',
     },
-    'tt-cap': {
-      textTransform: 'capitalizer',
+    '.tt-cap': {
+      textTransform: 'capitalize',
     },
-    'tt-no': {
+    '.tt-no': {
       textTransform: 'none',
     },
 
@@ -163,6 +167,35 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     '.pe-au': {
       pointerEvents: 'auto',
     },
+
+    /* border */
+    // border-style
+    '.bs-solid': {
+      borderStyle: 'solid',
+    },
+    '.bs-dashed': {
+      borderStyle: 'dashed',
+    },
+    '.bs-dotted': {
+      borderStyle: 'dotted',
+    },
+    '.bs-double': {
+      borderStyle: 'double',
+    },
+    '.bs-hidden': {
+      borderStyle: 'hidden',
+    },
+    '.bs-no': {
+      borderStyle: 'none',
+    },
+    // border-width
+    ...generateBorderWidths('bw'),
+    ...generateBorderWidthsForSides(['left'], 'bw-l'),
+    ...generateBorderWidthsForSides(['right'], 'bw-r'),
+    ...generateBorderWidthsForSides(['top'], 'bw-t'),
+    ...generateBorderWidthsForSides(['bottom'], 'bw-b'),
+    ...generateBorderWidthsForSides(['left', 'right'], 'bw-x'),
+    ...generateBorderWidthsForSides(['top', 'bottom'], 'bw-y'),
   }
 
   addUtilities(newUtilities)

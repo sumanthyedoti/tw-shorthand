@@ -1,5 +1,5 @@
 @import 'tailwindcss/utilities';
 
 .hello {
-  @apply l:c-red-10 h:d-f v:d-b f:j-s;
+  @apply bw-r-7 bw-x-7;
 }

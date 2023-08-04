@@ -22,6 +22,8 @@ const colorsWithNoVariants = [
   'white',
 ]
 
+const borderWidths = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+
 const getVariant = (variant) => parseInt(variant) / 10
 
 const generateColorUtilities = (property, prefix) => {
@@ -44,6 +46,32 @@ const generateColorUtilities = (property, prefix) => {
   return utils
 }
 
+const generateBorderWidths = (prefix) => {
+  const utils = {}
+  for (const width of borderWidths) {
+    utils[`.${prefix}-${width}`] = {
+      'border-width': width + 'px',
+    }
+  }
+  console.log(utils)
+  return utils
+}
+
+const generateBorderWidthsForSides = (sides, prefix) => {
+  const utils = {}
+  for (const width of borderWidths) {
+    const values = {}
+    for (const side of sides) {
+      values[`border-${side}-width`] = width + 'px'
+    }
+    utils[`.${prefix}-${width}`] = values
+  }
+  console.log(utils)
+  return utils
+}
+
 module.exports = {
   generateColorUtilities,
+  generateBorderWidths,
+  generateBorderWidthsForSides,
 }
