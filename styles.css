@@ -1,5 +1,5 @@
 @import 'tailwindcss/utilities';
 
 .hello {
-  @apply c-inherit c-transparent c-current c-black c-white;
+  @apply l:c-red-10 h:d-f v:d-b f:j-s;
 }

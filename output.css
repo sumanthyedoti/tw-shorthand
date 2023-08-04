@@ -1,7 +1,16 @@
-.hello {
-  color: inherit;
-  color: transparent;
-  color: currentColor;
-  color: #000;
-  color: #fff
+.hello:hover {
+  display: flex;
+  flex-direction: row;
+}
+
+.hello:focus {
+  justify-content: flex-start;
+}
+
+.hello:visited {
+  display: block;
+}
+
+.hello:link {
+  color: #fee2e2;
 }

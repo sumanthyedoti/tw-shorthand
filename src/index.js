@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin')
 
 const { generateColorUtilities } = require('./utils')
 
-module.exports = plugin(function ({ addUtilities, addComponents, e, config }) {
+module.exports = plugin(function ({ addUtilities, addVariant }) {
   const newUtilities = {
     /* display */
     '.d-s': {
@@ -82,6 +82,9 @@ module.exports = plugin(function ({ addUtilities, addComponents, e, config }) {
     /* background-color */
     ...generateColorUtilities('background-color', 'bgc'),
 
+    /* outline-color */
+    ...generateColorUtilities('outline-color', 'olc'),
+
     /* background-position */
     '.bgp-c': {
       backgroundPosition: 'center',
@@ -121,4 +124,20 @@ module.exports = plugin(function ({ addUtilities, addComponents, e, config }) {
   }
 
   addUtilities(newUtilities)
+
+  /* variants */
+  addVariant('h', '&:hover')
+  addVariant('a', '&:active')
+  addVariant('f', '&:focus')
+  addVariant('v', '&:visited')
+  addVariant('l', '&:link')
+  addVariant('c', '&:checked')
+  addVariant('d', '&:disabled')
+  addVariant('t', '&:target')
+  addVariant('e', '&:empty')
+  addVariant('o', '&:optional')
+  addVariant('first-ot', '&:first-of-type')
+  addVariant('last-ot', '&:last-of-type')
+  addVariant('only-ot', '&:only-ot')
+  addVariant('only-c', '&:only-child')
 })
