@@ -24,6 +24,9 @@ module.exports = plugin(function ({ addUtilities, addComponents, e, config }) {
       display: 'flex',
       flexDirection: 'row',
     },
+    '.d-g': {
+      display: 'grid',
+    },
 
     /* --- flex ---- */
     // flex-direction
@@ -54,6 +57,11 @@ module.exports = plugin(function ({ addUtilities, addComponents, e, config }) {
       alignItems: 'flex-end',
     },
 
+    /* grid */
+    '.a-e': {
+      alignItems: 'flex-end',
+    },
+
     /* position */
     '.p-s': {
       position: 'static',
@@ -69,10 +77,10 @@ module.exports = plugin(function ({ addUtilities, addComponents, e, config }) {
     },
 
     /* color */
-    // ...generateColorUtilities('color', '.c'),
+    ...generateColorUtilities('color', 'c'),
 
     /* background-color */
-    // ...generateColorUtilities('background-color', '.bgc'),
+    ...generateColorUtilities('background-color', 'bgc'),
 
     /* background-position */
     '.bgp-c': {
@@ -102,6 +110,15 @@ module.exports = plugin(function ({ addUtilities, addComponents, e, config }) {
     '.bgp-rb': {
       backgroundPosition: 'right bottom',
     },
+
+    /* pointer-events */
+    '.pe-no': {
+      pointerEvents: 'none',
+    },
+    '.pe-au': {
+      pointerEvents: 'auto',
+    },
   }
+
   addUtilities(newUtilities)
 })

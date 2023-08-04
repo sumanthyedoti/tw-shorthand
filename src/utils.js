@@ -14,10 +14,18 @@ const colorVariants = [
   '900',
   '950',
 ]
+const colorsWithNoVariants = [
+  'inherit',
+  'transparent',
+  'current',
+  'black',
+  'white',
+]
+
+const getVariant = (variant) => parseInt(variant) / 10
 
 const generateColorUtilities = (property, prefix) => {
   const utils = {}
-  const getVariant = (variant) => parseInt(variant) / 100
   const colorsWithVariants = Object.keys(colors).filter(
     (color) => typeof colors[color] !== 'string'
   )
@@ -26,6 +34,11 @@ const generateColorUtilities = (property, prefix) => {
       utils[`.${prefix}-${color}-${getVariant(variant)}`] = {
         [property]: colors[color][variant],
       }
+    }
+  }
+  for (const color of colorsWithNoVariants) {
+    utils[`.${prefix}-${color}`] = {
+      [property]: colors[color],
     }
   }
   return utils

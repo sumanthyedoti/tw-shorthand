@@ -1,7 +1,7 @@
 const shorthand = require('./src/index')
 
 module.exports = {
-  content: [],
+  content: ['index.html'],
   theme: {
     extend: {},
   },
