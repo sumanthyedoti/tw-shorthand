@@ -4,6 +4,7 @@ const {
   generateColorUtilities,
   generateBorderWidths,
   generateBorderWidthsForSides,
+  generateOutlineWidths,
 } = require('./utils')
 
 module.exports = plugin(function ({ addUtilities, addVariant }) {
@@ -196,6 +197,27 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     ...generateBorderWidthsForSides(['bottom'], 'bw-b'),
     ...generateBorderWidthsForSides(['left', 'right'], 'bw-x'),
     ...generateBorderWidthsForSides(['top', 'bottom'], 'bw-y'),
+
+    /* outline */
+    // outline-width
+    ...generateOutlineWidths('olw'),
+    // outline-style
+    '.ols-solid': {
+      outlineStyle: 'solid',
+    },
+    '.ols-dashed': {
+      outlineStyle: 'dashed',
+    },
+    '.ols-dotted': {
+      outlineStyle: 'dotted',
+    },
+    '.ols-double': {
+      outlineStyle: 'double',
+    },
+    '.ols-no': {
+      outline: '2px solid transparent',
+      outlineOffset: '2px',
+    },
   }
 
   addUtilities(newUtilities)

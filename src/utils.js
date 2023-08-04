@@ -53,7 +53,16 @@ const generateBorderWidths = (prefix) => {
       'border-width': width + 'px',
     }
   }
-  console.log(utils)
+  return utils
+}
+
+const generateOutlineWidths = (prefix) => {
+  const utils = {}
+  for (const width of borderWidths) {
+    utils[`.${prefix}-${width}`] = {
+      'outline-width': width + 'px',
+    }
+  }
   return utils
 }
 
@@ -66,7 +75,6 @@ const generateBorderWidthsForSides = (sides, prefix) => {
     }
     utils[`.${prefix}-${width}`] = values
   }
-  console.log(utils)
   return utils
 }
 
@@ -74,4 +82,5 @@ module.exports = {
   generateColorUtilities,
   generateBorderWidths,
   generateBorderWidthsForSides,
+  generateOutlineWidths,
 }
