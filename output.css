@@ -1,5 +1,6 @@
 .hello {
-  border-radius: 0.25rem;
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem
+  pointer-events: auto;
+  font-weight: 500;
+  font-size: 1.875rem;
+  line-height: 2.25rem
 }

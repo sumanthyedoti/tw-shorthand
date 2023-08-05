@@ -7,6 +7,7 @@ const {
   generateOutlineWidth,
   generateBorderRadius,
   generateBorderRadiusForCorners,
+  generateFontWeight,
 } = require('./utils')
 
 module.exports = plugin(function ({ addUtilities, addVariant }) {
@@ -76,6 +77,14 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     },
     '.p-f': {
       position: 'fixed',
+    },
+
+    /* pointer-events */
+    '.pe-au': {
+      pointerEvents: 'auto',
+    },
+    '.pe-no': {
+      pointerEvents: 'none',
     },
 
     /* color */
@@ -224,6 +233,76 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     '.ols-no': {
       outline: '2px solid transparent',
       outlineOffset: '2px',
+    },
+
+    /* === font === */
+    /* font-weight */
+    ...generateFontWeight('fw'),
+    /* font-style */
+    '.fs-i': {
+      fontStyle: 'italic',
+    },
+    '.fs-nl': {
+      fontStyle: 'normal',
+    },
+    '.fs-in': {
+      fontStyle: 'inherit',
+    },
+    '.fs-init': {
+      fontStyle: 'initial',
+    },
+    /* font-size */
+    '.fz-xs': {
+      fontSize: '0.75rem',
+      lineHeight: '1rem',
+    },
+    '.fz-sm': {
+      fontSize: '0.875rem',
+      lineHeight: '1.25rem',
+    },
+    '.fz-base': {
+      fontSize: '1rem', // 16px
+      lineHeight: '1.5rem', // 24px
+    },
+    '.fz-lg': {
+      fontSize: '1.125rem', // 18px
+      lineHeight: '1.75rem', // 28px
+    },
+    '.fz-xl': {
+      fontSize: '1.25rem', // 20px
+      lineHeight: '1.75rem', // 28px
+    },
+    '.fz-2xl': {
+      fontSize: '1.5rem', // 24px
+      lineHeight: '2rem', // 32px
+    },
+    '.fz-3xl': {
+      fontSize: '1.875rem', // 30px
+      lineHeight: '2.25rem', // 36px
+    },
+    '.fz-4xl': {
+      fontSize: '2.25rem', // 36px
+      lineHeight: '2.5rem', // 40px
+    },
+    '.fz-5xl': {
+      fontSize: '3rem', // 48px
+      lineHeight: 1,
+    },
+    '.fz-6xl': {
+      fontSize: '3.75rem', // 60px
+      lineHeight: 1,
+    },
+    '.fz-7xl': {
+      fontSize: '4.5rem', // 72px
+      lineHeight: 1,
+    },
+    '.fz-8xl': {
+      fontSize: '6rem', // 96px
+      lineHeight: 1,
+    },
+    '.fz-9xl': {
+      fontSize: '8rem', // 128px
+      lineHeight: 1,
     },
   }
 

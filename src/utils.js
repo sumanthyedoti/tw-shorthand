@@ -1,6 +1,5 @@
 const colors = require('tailwindcss/colors')
 
-console.log(colors.lightBlue[''])
 const colorVariants = [
   '50',
   '100',
@@ -14,6 +13,7 @@ const colorVariants = [
   '900',
   '950',
 ]
+
 const colorsWithNoVariants = [
   'inherit',
   'transparent',
@@ -43,6 +43,18 @@ const borderWidths = [
   ['6', '6px'],
   ['8', '8px'],
   ['10', '10px'],
+]
+
+const fontWeights = [
+  ['thin', '100'],
+  ['xlt', '200'],
+  ['lt', '300'],
+  ['nl', '400'],
+  ['md', '500'],
+  ['sb', '600'],
+  ['b', '700'],
+  ['xb', '800'],
+  ['black', '900'],
 ]
 
 const getVariant = (variant) => parseInt(variant) / 10
@@ -129,6 +141,16 @@ const generateOutlineWidth = (prefix) => {
   return utils
 }
 
+const generateFontWeight = (prefix) => {
+  const utils = {}
+  for (const [variant, size] of fontWeights) {
+    utils[`.${prefix}-${variant}`] = {
+      'font-weight': size,
+    }
+  }
+  return utils
+}
+
 module.exports = {
   generateColorUtilities,
   generateBorderWidth,
@@ -136,4 +158,5 @@ module.exports = {
   generateOutlineWidth,
   generateBorderRadius,
   generateBorderRadiusForCorners,
+  generateFontWeight,
 }

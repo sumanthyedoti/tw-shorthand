@@ -1,5 +1,5 @@
 @import 'tailwindcss/utilities';
 
 .hello {
-  @apply br br-l;
+  @apply fw-nl fw-md fz-3xl pe-au;
 }
