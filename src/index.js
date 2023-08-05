@@ -2,9 +2,11 @@ const plugin = require('tailwindcss/plugin')
 
 const {
   generateColorUtilities,
-  generateBorderWidths,
-  generateBorderWidthsForSides,
-  generateOutlineWidths,
+  generateBorderWidth,
+  generateBorderWidthForSides,
+  generateOutlineWidth,
+  generateBorderRadius,
+  generateBorderRadiusForCorners,
 } = require('./utils')
 
 module.exports = plugin(function ({ addUtilities, addVariant }) {
@@ -33,15 +35,15 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
       display: 'grid',
     },
 
-    /* --- flex ---- */
-    // flex-direction
+    /* === flex === */
+    /* flex-direction */
     '.f-r': {
       flexDirection: 'row',
     },
     '.f-c': {
       flexDirection: 'column',
     },
-    // justify-content
+    /* justify-content */
     '.j-s': {
       justifyContent: 'flex-start',
     },
@@ -51,18 +53,13 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     '.j-e': {
       justifyContent: 'flex-end',
     },
-    // align-items
+    /* align-items */
     '.a-s': {
       alignItems: 'flex-start',
     },
     '.a-c': {
       alignItems: 'sapce-between',
     },
-    '.a-e': {
-      alignItems: 'flex-end',
-    },
-
-    /* grid */
     '.a-e': {
       alignItems: 'flex-end',
     },
@@ -169,8 +166,8 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
       pointerEvents: 'auto',
     },
 
-    /* border */
-    // border-style
+    /* === border === */
+    /* border-style */
     '.bs-solid': {
       borderStyle: 'solid',
     },
@@ -189,19 +186,29 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     '.bs-no': {
       borderStyle: 'none',
     },
-    // border-width
-    ...generateBorderWidths('bw'),
-    ...generateBorderWidthsForSides(['left'], 'bw-l'),
-    ...generateBorderWidthsForSides(['right'], 'bw-r'),
-    ...generateBorderWidthsForSides(['top'], 'bw-t'),
-    ...generateBorderWidthsForSides(['bottom'], 'bw-b'),
-    ...generateBorderWidthsForSides(['left', 'right'], 'bw-x'),
-    ...generateBorderWidthsForSides(['top', 'bottom'], 'bw-y'),
+    /* border-width */
+    ...generateBorderWidth('bw'),
+    ...generateBorderWidthForSides(['left'], 'bw-l'),
+    ...generateBorderWidthForSides(['right'], 'bw-r'),
+    ...generateBorderWidthForSides(['top'], 'bw-t'),
+    ...generateBorderWidthForSides(['bottom'], 'bw-b'),
+    ...generateBorderWidthForSides(['left', 'right'], 'bw-x'),
+    ...generateBorderWidthForSides(['top', 'bottom'], 'bw-y'),
+    /* border-radius */
+    ...generateBorderRadius('br'),
+    ...generateBorderRadiusForCorners(['top-left'], 'br-tl'),
+    ...generateBorderRadiusForCorners(['top-right'], 'br-tr'),
+    ...generateBorderRadiusForCorners(['bottom-left'], 'br-bl'),
+    ...generateBorderRadiusForCorners(['bottom-right'], 'br-br'),
+    ...generateBorderRadiusForCorners(['top-left', 'top-right'], 'br-t'),
+    ...generateBorderRadiusForCorners(['bottom-left', 'bottom-right'], 'br-b'),
+    ...generateBorderRadiusForCorners(['top-left', 'bottom-left'], 'br-l'),
+    ...generateBorderRadiusForCorners(['top-right', 'bottom-right'], 'br-r'),
 
-    /* outline */
-    // outline-width
-    ...generateOutlineWidths('olw'),
-    // outline-style
+    /* === outline === */
+    /* outline-width */
+    ...generateOutlineWidth('olw'),
+    /* outline-style */
     '.ols-solid': {
       outlineStyle: 'solid',
     },

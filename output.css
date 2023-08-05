@@ -1,4 +1,5 @@
 .hello {
-  outline-width: 4px;
-  outline-style: dotted
+  border-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem
 }

@@ -1,5 +1,5 @@
 @import 'tailwindcss/utilities';
 
 .hello {
-  @apply olw-4 ols-dotted;
+  @apply br br-l;
 }

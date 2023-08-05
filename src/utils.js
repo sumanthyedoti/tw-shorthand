@@ -22,7 +22,28 @@ const colorsWithNoVariants = [
   'white',
 ]
 
-const borderWidths = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+const borderRadii = [
+  ['nl', '0.25rem'], // normal
+  ['no', '0rem'],
+  ['sm', '0.125rem'],
+  ['md', '0.375rem'],
+  ['lg', '0.5rem'],
+  ['xl', '0.75rem'],
+  ['2xl', '1rem'],
+  ['3xl', '1.5rem'],
+  ['full', '9999px'],
+]
+
+const borderWidths = [
+  ['0', '0px'],
+  ['1', '1px'],
+  ['2', '2px'],
+  ['3', '3px'],
+  ['4', '4px'],
+  ['6', '6px'],
+  ['8', '8px'],
+  ['10', '10px'],
+]
 
 const getVariant = (variant) => parseInt(variant) / 10
 
@@ -46,41 +67,73 @@ const generateColorUtilities = (property, prefix) => {
   return utils
 }
 
-const generateBorderWidths = (prefix) => {
+const generateBorderWidth = (prefix) => {
   const utils = {}
-  for (const width of borderWidths) {
-    utils[`.${prefix}-${width}`] = {
-      'border-width': width + 'px',
+  for (const [variant, size] of borderWidths) {
+    utils[`.${prefix}-${variant}`] = {
+      'border-width': size,
     }
   }
   return utils
 }
 
-const generateOutlineWidths = (prefix) => {
+const generateBorderWidthForSides = (sides, prefix) => {
   const utils = {}
-  for (const width of borderWidths) {
-    utils[`.${prefix}-${width}`] = {
-      'outline-width': width + 'px',
-    }
-  }
-  return utils
-}
-
-const generateBorderWidthsForSides = (sides, prefix) => {
-  const utils = {}
-  for (const width of borderWidths) {
-    const values = {}
+  for (const [variant, size] of borderWidths) {
+    const properties = {}
     for (const side of sides) {
-      values[`border-${side}-width`] = width + 'px'
+      properties[`border-${side}-width`] = size
     }
-    utils[`.${prefix}-${width}`] = values
+    utils[`.${prefix}-${variant}`] = properties
+  }
+  return utils
+}
+
+const generateBorderRadius = (prefix) => {
+  const utils = {}
+  for (const [variant, size] of borderRadii) {
+    utils[`.${prefix}-${variant}`] = {
+      'border-radius': size,
+    }
+  }
+  utils[`.${prefix}`] = {
+    'border-radius': borderRadii[0][1],
+  }
+  return utils
+}
+
+const generateBorderRadiusForCorners = (corners, prefix) => {
+  const utils = {}
+  for (const [variant, size] of borderRadii) {
+    const properties = {}
+    for (const corner of corners) {
+      properties[`border-${corner}-radius`] = size
+    }
+    utils[`.${prefix}-${variant}`] = properties
+  }
+  const normalSizeProperties = {}
+  for (const corner of corners) {
+    normalSizeProperties[`border-${corner}-radius`] = borderRadii[0][1]
+  }
+  utils[`.${prefix}`] = normalSizeProperties
+  return utils
+}
+
+const generateOutlineWidth = (prefix) => {
+  const utils = {}
+  for (const [variant, size] of borderWidths) {
+    utils[`.${prefix}-${variant}`] = {
+      'outline-width': size,
+    }
   }
   return utils
 }
 
 module.exports = {
   generateColorUtilities,
-  generateBorderWidths,
-  generateBorderWidthsForSides,
-  generateOutlineWidths,
+  generateBorderWidth,
+  generateBorderWidthForSides,
+  generateOutlineWidth,
+  generateBorderRadius,
+  generateBorderRadiusForCorners,
 }
