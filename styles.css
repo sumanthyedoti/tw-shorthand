@@ -1,4 +1,4 @@
 @import 'tailwindcss/utilities';
-w .hello {
-  @apply tr-s-125 fw-4 tr-r-1/8 tr-o-tl;
+.hello {
+  @apply tr-tr-x-4 tr-tr-y-6 tr-tr-y-1/2 tr-sk-x-4 tr-sk-y-6;
 }

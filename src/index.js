@@ -11,6 +11,8 @@ const {
   generateTransformScale,
   generateTransformRotate,
   generateTransformOrigin,
+  generateTransformTranslate,
+  generateTransformSkew,
 } = require('./utils')
 
 module.exports = plugin(function ({ addUtilities, addVariant }) {
@@ -200,22 +202,22 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     },
     /* border-width */
     ...generateBorderWidth('bw'),
-    ...generateBorderWidthForSides(['left'], 'bw-l'),
-    ...generateBorderWidthForSides(['right'], 'bw-r'),
-    ...generateBorderWidthForSides(['top'], 'bw-t'),
-    ...generateBorderWidthForSides(['bottom'], 'bw-b'),
-    ...generateBorderWidthForSides(['left', 'right'], 'bw-x'),
-    ...generateBorderWidthForSides(['top', 'bottom'], 'bw-y'),
+    ...generateBorderWidthForSides('bw-l', ['left']),
+    ...generateBorderWidthForSides('bw-r', ['right']),
+    ...generateBorderWidthForSides('bw-t', ['top']),
+    ...generateBorderWidthForSides('bw-b', ['bottom']),
+    ...generateBorderWidthForSides('bw-x', ['left', 'right']),
+    ...generateBorderWidthForSides('bw-y', ['top', 'bottom']),
     /* border-radius */
     ...generateBorderRadius('br'),
-    ...generateBorderRadiusForCorners(['top-left'], 'br-tl'),
-    ...generateBorderRadiusForCorners(['top-right'], 'br-tr'),
-    ...generateBorderRadiusForCorners(['bottom-left'], 'br-bl'),
-    ...generateBorderRadiusForCorners(['bottom-right'], 'br-br'),
-    ...generateBorderRadiusForCorners(['top-left', 'top-right'], 'br-t'),
-    ...generateBorderRadiusForCorners(['bottom-left', 'bottom-right'], 'br-b'),
-    ...generateBorderRadiusForCorners(['top-left', 'bottom-left'], 'br-l'),
-    ...generateBorderRadiusForCorners(['top-right', 'bottom-right'], 'br-r'),
+    ...generateBorderRadiusForCorners('br-tl', ['top-left']),
+    ...generateBorderRadiusForCorners('br-tr', ['top-right']),
+    ...generateBorderRadiusForCorners('br-bl', ['bottom-left']),
+    ...generateBorderRadiusForCorners('br-br', ['bottom-right']),
+    ...generateBorderRadiusForCorners('br-t', ['top-left', 'top-right']),
+    ...generateBorderRadiusForCorners('br-b', ['bottom-left', 'bottom-right']),
+    ...generateBorderRadiusForCorners('br-l', ['top-left', 'bottom-left']),
+    ...generateBorderRadiusForCorners('br-r', ['top-right', 'bottom-right']),
 
     /* === outline === */
     /* outline-width */
@@ -315,6 +317,12 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     ...generateTransformRotate('tr-r'),
     /* tranform-origin */
     ...generateTransformOrigin('tr-o'),
+    /* translateX/Y */
+    ...generateTransformTranslate('tr-tr', 'x'),
+    ...generateTransformTranslate('tr-tr', 'y'),
+    /* skewX/Y */
+    ...generateTransformSkew('tr-sk', 'x'),
+    ...generateTransformSkew('tr-sk', 'y'),
   }
   addUtilities(newUtilities)
 

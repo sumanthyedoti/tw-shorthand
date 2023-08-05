@@ -23,6 +23,7 @@ const colorsWithNoVariants = [
 const borderRadii = [
   ['nl', '0.25rem'], // normal
   ['no', '0rem'],
+  ['xs', '0.113rem'],
   ['sm', '0.125rem'],
   ['md', '0.375rem'],
   ['lg', '0.5rem'],
@@ -123,6 +124,72 @@ const transformOrigins = [
   ['bl', 'bottom left'],
 ]
 
+const numericLengths = [
+  ['0', '0'],
+  ['px', '1px'],
+  ['0.5', '0.125rem'],
+  ['1', '0.25rem'],
+  ['1.5', '0.375rem'],
+  ['2', '0.5rem'],
+  ['2.5', '0.625rem'],
+  ['3', '0.75rem'],
+  ['3.5', '0.875rem'],
+  ['4', '1rem'],
+  ['5', '1.25rem'],
+  ['6', '1.5rem'],
+  ['7', '1.75rem'],
+  ['8', '2rem'],
+  ['9', '2.25rem'],
+  ['10', '2.5rem'],
+  ['11', '2.75rem'],
+  ['12', '3rem'],
+  ['14', '3.5rem'],
+  ['16', '4rem'],
+  ['18', '4.5rem'],
+  ['20', '5rem'],
+  ['24', '6rem'],
+  ['28', '7rem'],
+  ['32', '8rem'],
+  ['36', '9rem'],
+  ['40', '10rem'],
+  ['44', '11rem'],
+  ['48', '12rem'],
+  ['52', '13rem'],
+  ['56', '14rem'],
+  ['60', '15rem'],
+  ['64', '16rem'],
+  ['72', '18rem'],
+  ['80', '20rem'],
+  ['96', '24rem'],
+  ['full', '100%'],
+]
+
+const percentageLengths234 = [
+  ['1\\/2', '50%'],
+  ['1\\/3', '33.333333%'],
+  ['2\\/3', '66.666667%'],
+  ['1\\/4', '25%'],
+  ['2\\/4', '25%'],
+  ['3\\/4', '75%'],
+]
+
+const skewRadii = [
+  ['1', '1deg'],
+  ['2', '1deg'],
+  ['3', '3deg'],
+  ['4', '4deg'],
+  ['5', '5deg'],
+  ['6', '6deg'],
+  ['8', '8deg'],
+  ['10', '10deg'],
+  ['12', '12deg'],
+  ['16', '16deg'],
+  ['20', '20deg'],
+  ['25', '25deg'],
+]
+
+const translateLengths = [...numericLengths, ...percentageLengths234]
+
 module.exports = {
   colorVariants,
   colorsWithNoVariants,
@@ -132,4 +199,6 @@ module.exports = {
   transformScales,
   transformRotates,
   transformOrigins,
+  translateLengths,
+  skewRadii,
 }

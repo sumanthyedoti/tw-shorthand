@@ -9,6 +9,8 @@ const {
   transformRotates,
   transformScales,
   transformOrigins,
+  translateLengths,
+  skewRadii,
 } = require('./values')
 
 const getVariant = (variant) => parseInt(variant) / 10
@@ -43,7 +45,7 @@ const generateBorderWidth = (prefix) => {
   return utils
 }
 
-const generateBorderWidthForSides = (sides, prefix) => {
+const generateBorderWidthForSides = (prefix, sides) => {
   const utils = {}
   for (const [variant, size] of borderWidths) {
     const properties = {}
@@ -68,7 +70,7 @@ const generateBorderRadius = (prefix) => {
   return utils
 }
 
-const generateBorderRadiusForCorners = (corners, prefix) => {
+const generateBorderRadiusForCorners = (prefix, corners) => {
   const utils = {}
   for (const [variant, size] of borderRadii) {
     const properties = {}
@@ -135,6 +137,25 @@ const generateTransformOrigin = (prefix) => {
   return utils
 }
 
+const generateTransformTranslate = (prefix, axis) => {
+  const utils = {}
+  for (const [variant, length] of translateLengths) {
+    utils[`.${prefix}-${axis}-${variant}`] = {
+      transform: `translate${axis.toUpperCase()}(${length})`,
+    }
+  }
+  return utils
+}
+const generateTransformSkew = (prefix, axis) => {
+  const utils = {}
+  for (const [variant, length] of skewRadii) {
+    utils[`.${prefix}-${axis}-${variant}`] = {
+      transform: `skew${axis.toUpperCase()}(${length})`,
+    }
+  }
+  return utils
+}
+
 module.exports = {
   generateColorUtilities,
   generateBorderWidth,
@@ -146,4 +167,6 @@ module.exports = {
   generateTransformScale,
   generateTransformRotate,
   generateTransformOrigin,
+  generateTransformTranslate,
+  generateTransformSkew,
 }
