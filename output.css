@@ -1,6 +1,10 @@
-.hello {
-  pointer-events: auto;
-  font-weight: 500;
-  font-size: 1.875rem;
-  line-height: 2.25rem
+.fw-5 {
+  font-weight: 500
+}
+
+w .hello {
+  font-weight: 400;
+  transform: scale(1.25);
+  transform: rotate(45deg);
+  transform-origin: top left
 }

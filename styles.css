@@ -1,5 +1,4 @@
 @import 'tailwindcss/utilities';
-
-.hello {
-  @apply fw-nl fw-md fz-3xl pe-au;
+w .hello {
+  @apply tr-s-125 fw-4 tr-r-1/8 tr-o-tl;
 }

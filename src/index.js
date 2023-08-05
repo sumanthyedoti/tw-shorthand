@@ -8,6 +8,9 @@ const {
   generateBorderRadius,
   generateBorderRadiusForCorners,
   generateFontWeight,
+  generateTransformScale,
+  generateTransformRotate,
+  generateTransformOrigin,
 } = require('./utils')
 
 module.exports = plugin(function ({ addUtilities, addVariant }) {
@@ -304,8 +307,15 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
       fontSize: '8rem', // 128px
       lineHeight: 1,
     },
-  }
 
+    /* === transforms === */
+    /* scale */
+    ...generateTransformScale('tr-s'),
+    /* rotate */
+    ...generateTransformRotate('tr-r'),
+    /* tranform-origin */
+    ...generateTransformOrigin('tr-o'),
+  }
   addUtilities(newUtilities)
 
   /* variants */

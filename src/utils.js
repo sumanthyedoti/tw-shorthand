@@ -1,61 +1,15 @@
 const colors = require('tailwindcss/colors')
 
-const colorVariants = [
-  '50',
-  '100',
-  '200',
-  '300',
-  '400',
-  '500',
-  '600',
-  '700',
-  '800',
-  '900',
-  '950',
-]
-
-const colorsWithNoVariants = [
-  'inherit',
-  'transparent',
-  'current',
-  'black',
-  'white',
-]
-
-const borderRadii = [
-  ['nl', '0.25rem'], // normal
-  ['no', '0rem'],
-  ['sm', '0.125rem'],
-  ['md', '0.375rem'],
-  ['lg', '0.5rem'],
-  ['xl', '0.75rem'],
-  ['2xl', '1rem'],
-  ['3xl', '1.5rem'],
-  ['full', '9999px'],
-]
-
-const borderWidths = [
-  ['0', '0px'],
-  ['1', '1px'],
-  ['2', '2px'],
-  ['3', '3px'],
-  ['4', '4px'],
-  ['6', '6px'],
-  ['8', '8px'],
-  ['10', '10px'],
-]
-
-const fontWeights = [
-  ['thin', '100'],
-  ['xlt', '200'],
-  ['lt', '300'],
-  ['nl', '400'],
-  ['md', '500'],
-  ['sb', '600'],
-  ['b', '700'],
-  ['xb', '800'],
-  ['black', '900'],
-]
+const {
+  colorVariants,
+  colorsWithNoVariants,
+  fontWeights,
+  borderWidths,
+  borderRadii,
+  transformRotates,
+  transformScales,
+  transformOrigins,
+} = require('./values')
 
 const getVariant = (variant) => parseInt(variant) / 10
 
@@ -151,6 +105,36 @@ const generateFontWeight = (prefix) => {
   return utils
 }
 
+const generateTransformScale = (prefix) => {
+  const utils = {}
+  for (const [variant, size] of transformScales) {
+    utils[`.${prefix}-${variant}`] = {
+      transform: `scale(${size})`,
+    }
+  }
+  return utils
+}
+
+const generateTransformRotate = (prefix) => {
+  const utils = {}
+  for (const [variant, size] of transformRotates) {
+    utils[`.${prefix}-${variant}`] = {
+      transform: `rotate(${size})`,
+    }
+  }
+  return utils
+}
+
+const generateTransformOrigin = (prefix) => {
+  const utils = {}
+  for (const [variant, origin] of transformOrigins) {
+    utils[`.${prefix}-${variant}`] = {
+      'transform-origin': origin,
+    }
+  }
+  return utils
+}
+
 module.exports = {
   generateColorUtilities,
   generateBorderWidth,
@@ -159,4 +143,7 @@ module.exports = {
   generateBorderRadius,
   generateBorderRadiusForCorners,
   generateFontWeight,
+  generateTransformScale,
+  generateTransformRotate,
+  generateTransformOrigin,
 }
