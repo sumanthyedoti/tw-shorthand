@@ -1,4 +1,4 @@
 @import 'tailwindcss/utilities';
 .hello {
-  @apply tr-tr-x-4;
+  @apply fb-6;
 }

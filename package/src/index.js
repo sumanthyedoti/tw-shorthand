@@ -13,7 +13,9 @@ const {
   generateTransformOrigin,
   generateTransformTranslate,
   generateTransformSkew,
+  generateUtilities,
 } = require('./utils')
+const { allLengths } = require('./values')
 
 module.exports = plugin(function ({ addUtilities, addVariant }) {
   const newUtilities = {
@@ -49,6 +51,8 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     '.f-c': {
       flexDirection: 'column',
     },
+    /* flex-basis */
+    ...generateUtilities('flex-basis', 'fb', allLengths),
     /* justify-content */
     '.j-s': {
       justifyContent: 'flex-start',
@@ -84,19 +88,8 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
       position: 'fixed',
     },
 
-    /* pointer-events */
-    '.pe-au': {
-      pointerEvents: 'auto',
-    },
-    '.pe-no': {
-      pointerEvents: 'none',
-    },
-
     /* color */
     ...generateColorUtilities('color', 'c'),
-
-    /* outline-color */
-    ...generateColorUtilities('outline-color', 'olc'),
 
     /* background-position */
     '.bgp-c': {
@@ -217,6 +210,8 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     ...generateBorderRadiusForCorners('br-r', ['top-right', 'bottom-right']),
 
     /* === outline === */
+    /* outline-color */
+    ...generateColorUtilities('outline-color', 'olc'),
     /* outline-width */
     ...generateOutlineWidth('olw'),
     /* outline-style */
@@ -334,8 +329,8 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
   addVariant('t', '&:target')
   addVariant('e', '&:empty')
   addVariant('o', '&:optional')
-  addVariant('first-ot', '&:first-of-type')
-  addVariant('last-ot', '&:last-of-type')
-  addVariant('only-ot', '&:only-ot')
-  addVariant('only-c', '&:only-child')
+  addVariant('fot', '&:first-of-type')
+  addVariant('lot', '&:last-of-type')
+  addVariant('oot', '&:only-ot')
+  addVariant('oc', '&:only-child')
 })

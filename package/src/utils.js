@@ -11,6 +11,7 @@ const {
   transformOrigins,
   translateLengths,
   skewRadii,
+  allLengths,
 } = require('./values')
 
 const getVariant = (variant) => parseInt(variant) / 10
@@ -146,11 +147,22 @@ const generateTransformTranslate = (prefix, axis) => {
   }
   return utils
 }
+
 const generateTransformSkew = (prefix, axis) => {
   const utils = {}
   for (const [variant, length] of skewRadii) {
     utils[`.${prefix}-${axis}-${variant}`] = {
       transform: `skew${axis.toUpperCase()}(${length})`,
+    }
+  }
+  return utils
+}
+
+const generateUtilities = (property, prefix, values) => {
+  const utils = {}
+  for (const [variant, value] of values) {
+    utils[`.${prefix}-${variant}`] = {
+      [property]: value,
     }
   }
   return utils
@@ -169,4 +181,5 @@ module.exports = {
   generateTransformOrigin,
   generateTransformTranslate,
   generateTransformSkew,
+  generateUtilities,
 }
