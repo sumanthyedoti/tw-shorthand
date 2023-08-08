@@ -1,12 +1,16 @@
 {
-  "name": "tw-shorthand",
-  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
   "description": "A tailwind plugin that defines shorthand for classes where possible",
   "main": "src/index.js",
-  "repository": "https://github.com/sumanthyedoti/tw-shorthand",
+  "keywords": [
+    "tailwind",
+    "tailwind plugin",
+    "tailwind shorthand"
+  ],
   "author": "Sumanth Yedoti",
-  "license": "MIT",
-  "devDependencies": {
-    "tailwindcss": "^3.3.3"
+  "repository": "https://github.com/sumanthyedoti/tw-shorthand",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

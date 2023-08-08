@@ -95,9 +95,6 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     /* color */
     ...generateColorUtilities('color', 'c'),
 
-    /* background-color */
-    ...generateColorUtilities('background-color', 'bgc'),
-
     /* outline-color */
     ...generateColorUtilities('outline-color', 'olc'),
 
