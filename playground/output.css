@@ -1,3 +1,63 @@
+.fd-r {
+  flex-direction: row
+}
+
+.fd-rr {
+  flex-direction: row-reverse
+}
+
+.fd-c {
+  flex-direction: column
+}
+
+.fd-cr {
+  flex-direction: column-reverse
+}
+
+.fw-w {
+  flex-wrap: wrap
+}
+
+.fw-wr {
+  flex-wrap: wrap-reverse
+}
+
+.fw-no {
+  flex-wrap: none
+}
+
+.ar-1\/1 {
+  aspect-ratio: 1 / 1
+}
+
+.ar-2\/3 {
+  aspect-ratio: 2 / 3
+}
+
+.ar-3\/2 {
+  aspect-ratio: 2 / 2
+}
+
+.ar-4\/5 {
+  aspect-ratio: 4 / 5
+}
+
+.ar-5\/4 {
+  aspect-ratio: 5 / 4
+}
+
 .hello {
-  flex-basis: 1.5rem
+  flex-direction: row;
+  flex-direction: row-reverse;
+  flex-direction: column;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
+  flex-wrap: none;
+  aspect-ratio: 1 / 1;
+  aspect-ratio: 9 / 16;
+  aspect-ratio: 2 / 3;
+  aspect-ratio: 2 / 2;
+  aspect-ratio: 4 / 5;
+  aspect-ratio: 5 / 4
 }

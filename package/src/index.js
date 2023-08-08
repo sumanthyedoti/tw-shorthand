@@ -53,6 +53,29 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     },
     /* flex-basis */
     ...generateUtilities('flex-basis', 'fb', allLengths),
+    /* flex-dreiction */
+    '.fd-r': {
+      flexDirection: 'row',
+    },
+    '.fd-rr': {
+      flexDirection: 'row-reverse',
+    },
+    '.fd-c': {
+      flexDirection: 'column',
+    },
+    '.fd-cr': {
+      flexDirection: 'column-reverse',
+    },
+    /* flex-wrap  */
+    '.fw-w': {
+      flexWrap: 'wrap',
+    },
+    '.fw-wr': {
+      flexWrap: 'wrap-reverse',
+    },
+    '.fw-no': {
+      flexWrap: 'none',
+    },
     /* justify-content */
     '.j-s': {
       justifyContent: 'flex-start',
@@ -315,6 +338,32 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     /* skewX/Y */
     ...generateTransformSkew('tr-sk', 'x'),
     ...generateTransformSkew('tr-sk', 'y'),
+
+    /* aspect-ratio */
+    '.ar-au': {
+      aspectRatio: 'auto',
+    },
+    '.ar-1\\/1': {
+      aspectRatio: '1 / 1',
+    },
+    '.ar-16\\/9': {
+      aspectRatio: '16 / 9',
+    },
+    '.ar-9\\/16': {
+      aspectRatio: '9 / 16',
+    },
+    '.ar-2\\/3': {
+      aspectRatio: '2 / 3',
+    },
+    '.ar-3\\/2': {
+      aspectRatio: '3 / 2',
+    },
+    '.ar-4\\/5': {
+      aspectRatio: '4 / 5',
+    },
+    '.ar-5\\/4': {
+      aspectRatio: '5 / 4',
+    },
   }
   addUtilities(newUtilities)
 
