@@ -1,63 +1,47 @@
-.fd-r {
-  flex-direction: row
+.d-i {
+  display: inline
 }
 
-.fd-rr {
-  flex-direction: row-reverse
+.d-f {
+  display: flex
 }
 
-.fd-c {
-  flex-direction: column
+.d-t-cl {
+  display: table-cell
 }
 
-.fd-cr {
-  flex-direction: column-reverse
+.d-t-c {
+  display: table-column
 }
 
-.fw-w {
-  flex-wrap: wrap
+.d-t-c-g {
+  display: table-column-group
 }
 
-.fw-wr {
-  flex-wrap: wrap-reverse
+.d-t-r-g {
+  display: table-row-group
 }
 
-.fw-no {
-  flex-wrap: none
+.d-t-r {
+  display: table-row
 }
 
-.ar-1\/1 {
-  aspect-ratio: 1 / 1
+.d-ig {
+  display: inline-grid
 }
 
-.ar-2\/3 {
-  aspect-ratio: 2 / 3
-}
-
-.ar-3\/2 {
-  aspect-ratio: 2 / 2
-}
-
-.ar-4\/5 {
-  aspect-ratio: 4 / 5
-}
-
-.ar-5\/4 {
-  aspect-ratio: 5 / 4
+.d-no {
+  display: none
 }
 
 .hello {
-  flex-direction: row;
-  flex-direction: row-reverse;
-  flex-direction: column;
-  flex-direction: column-reverse;
-  flex-wrap: wrap;
-  flex-wrap: wrap-reverse;
-  flex-wrap: none;
-  aspect-ratio: 1 / 1;
-  aspect-ratio: 9 / 16;
-  aspect-ratio: 2 / 3;
-  aspect-ratio: 2 / 2;
-  aspect-ratio: 4 / 5;
-  aspect-ratio: 5 / 4
+  display: inline;
+  display: flex;
+  display: table-cell;
+  display: table-column;
+  display: table-column-group;
+  display: table-row-group;
+  display: table-row;
+  display: inline-grid;
+  display: none
 }

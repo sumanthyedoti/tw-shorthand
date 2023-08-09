@@ -15,33 +15,12 @@ const {
   generateTransformSkew,
   generateUtilities,
 } = require('./utils')
-const { allLengths } = require('./values')
+const { allLengths, columns, displayValues } = require('./values')
 
 module.exports = plugin(function ({ addUtilities, addVariant }) {
   const newUtilities = {
     /* display */
-    '.d-s': {
-      display: 'static',
-    },
-    '.d-b': {
-      display: 'block',
-    },
-    '.d-i': {
-      display: 'inline',
-    },
-    '.d-ib': {
-      display: 'inline-block',
-    },
-    '.d-no': {
-      display: 'none',
-    },
-    '.d-f': {
-      display: 'flex',
-      flexDirection: 'row',
-    },
-    '.d-g': {
-      display: 'grid',
-    },
+    ...generateUtilities('display', 'd', displayValues),
 
     /* === flex === */
     /* flex-direction */
@@ -141,6 +120,25 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     },
     '.bgp-rb': {
       backgroundPosition: 'right bottom',
+    },
+
+    /* columns */
+    ...generateUtilities('columns', 'cols', columns),
+
+    /* box-decoration-break */
+    '.box-decor-cl': {
+      boxDecorationBreak: 'clone',
+    },
+    '.box-decor-sl': {
+      boxDecorationBreak: 'slice',
+    },
+
+    /* box-sizing */
+    '.box-z-b': {
+      boxSizing: 'border-box',
+    },
+    '.box-z-c': {
+      boxSizing: 'content-box',
     },
 
     /* text-align */

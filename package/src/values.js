@@ -1,3 +1,27 @@
+const displayValues = [
+  ['b', 'block'],
+  ['ib', 'inline-block'],
+  ['i', 'inline'],
+  ['f', 'flex'],
+  ['if', 'inline-flex'],
+  ['t', 'table'],
+  ['it', 'inline-table'],
+  ['t-cp', 'table-caption'],
+  ['t-cl', 'table-cell'],
+  ['t-c', 'table-column'],
+  ['t-c-g', 'table-column-group'],
+  ['t-ft-g', 'table-footer-group'],
+  ['t-hd-g', 'table-header-group'],
+  ['t-r-g', 'table-row-group'],
+  ['t-r', 'table-row'],
+  ['fw-rt', 'flow-root'],
+  ['g', 'grid'],
+  ['ig', 'inline-grid'],
+  ['c', 'contents'],
+  ['li', 'list-item'],
+  ['no', 'none'],
+]
+
 const colorVariants = [
   '50',
   '100',
@@ -211,6 +235,34 @@ const skewRadii = [
   ['25', '25deg'],
 ]
 
+const columns = [
+  ['1', '1'],
+  ['2', '1'],
+  ['3', '3'],
+  ['4', '4'],
+  ['5', '5'],
+  ['6', '6'],
+  ['7', '7'],
+  ['8', '8'],
+  ['10', '10'],
+  ['11', '11'],
+  ['12', '12'],
+  ['au', 'auto'],
+  ['3xs', '16rem'],
+  ['2xs', '18rem'],
+  ['xs', '20rem'],
+  ['sm', '24rem'],
+  ['md', '28rem'],
+  ['lg', '32rem'],
+  ['xl', '36rem'],
+  ['2xl', '42rem'],
+  ['3xl', '48rem'],
+  ['4xl', '56rem'],
+  ['5xl', '64rem'],
+  ['6xl', '72rem'],
+  ['7xl', '80rem'],
+]
+
 const translateLengths = [...numericLengths, ...percentageLengths_2_3_4]
 const allLengths = [
   ...numericLengths,
@@ -219,6 +271,7 @@ const allLengths = [
 ]
 
 module.exports = {
+  displayValues,
   colorVariants,
   colorsWithNoVariants,
   borderRadii,
@@ -230,4 +283,5 @@ module.exports = {
   translateLengths,
   allLengths,
   skewRadii,
+  columns,
 }
