@@ -15,7 +15,14 @@ const {
   generateTransformSkew,
   generateUtilities,
 } = require('./utils')
-const { allLengths, columns, displayValues } = require('./values')
+const {
+  allLengths,
+  columns,
+  displayValues,
+  positions,
+  objectFits,
+  overflows,
+} = require('./values')
 
 module.exports = plugin(function ({ addUtilities, addVariant }) {
   const newUtilities = {
@@ -23,36 +30,30 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     ...generateUtilities('display', 'd', displayValues),
 
     /* === flex === */
-    /* flex-direction */
+    /* flex-basis */
+    ...generateUtilities('flex-basis', 'fb', allLengths),
+
+    /* flex-dreiction */
     '.f-r': {
       flexDirection: 'row',
+    },
+    '.f-rr': {
+      flexDirection: 'row-reverse',
     },
     '.f-c': {
       flexDirection: 'column',
     },
-    /* flex-basis */
-    ...generateUtilities('flex-basis', 'fb', allLengths),
-    /* flex-dreiction */
-    '.fd-r': {
-      flexDirection: 'row',
-    },
-    '.fd-rr': {
-      flexDirection: 'row-reverse',
-    },
-    '.fd-c': {
-      flexDirection: 'column',
-    },
-    '.fd-cr': {
+    '.f-cr': {
       flexDirection: 'column-reverse',
     },
     /* flex-wrap  */
-    '.fw-w': {
+    '.f-w': {
       flexWrap: 'wrap',
     },
-    '.fw-wr': {
+    '.f-w-r': {
       flexWrap: 'wrap-reverse',
     },
-    '.fw-no': {
+    '.f-w-no': {
       flexWrap: 'none',
     },
     /* justify-content */
@@ -90,37 +91,22 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
       position: 'fixed',
     },
 
+    /* object-fit */
+    ...generateUtilities('object-fit', 'ob', objectFits),
+
+    /* object-position */
+    ...generateUtilities('object-position', 'ob', positions),
+
+    /* overflow */
+    ...generateUtilities('overflow', 'ov', overflows),
+    ...generateUtilities('overflow-x', 'ov-x', overflows),
+    ...generateUtilities('overflow-y', 'ov-y', overflows),
+
     /* color */
     ...generateColorUtilities('color', 'c'),
 
     /* background-position */
-    '.bgp-c': {
-      backgroundPosition: 'center',
-    },
-    '.bgp-t': {
-      backgroundPosition: 'top',
-    },
-    '.bgp-b': {
-      backgroundPosition: 'bottom',
-    },
-    '.bgp-l': {
-      backgroundPosition: 'left',
-    },
-    '.bgp-r': {
-      backgroundPosition: 'right',
-    },
-    '.bgp-lt': {
-      backgroundPosition: 'left top',
-    },
-    '.bgp-lb': {
-      backgroundPosition: 'left bottom',
-    },
-    '.bgp-rt': {
-      backgroundPosition: 'right top',
-    },
-    '.bgp-rb': {
-      backgroundPosition: 'right bottom',
-    },
+    ...generateUtilities('background-position', 'bg', positions),
 
     /* columns */
     ...generateUtilities('columns', 'cols', columns),
@@ -184,55 +170,55 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     },
 
     /* pointer-events */
-    '.pe-no': {
+    '.p-e-no': {
       pointerEvents: 'none',
     },
-    '.pe-au': {
+    '.p-e-au': {
       pointerEvents: 'auto',
     },
 
     /* === border === */
     /* border-style */
-    '.bs-solid': {
+    '.b-sol': {
       borderStyle: 'solid',
     },
-    '.bs-dashed': {
+    '.b-dash': {
       borderStyle: 'dashed',
     },
-    '.bs-dotted': {
+    '.b-dot': {
       borderStyle: 'dotted',
     },
-    '.bs-double': {
+    '.b-dbl': {
       borderStyle: 'double',
     },
-    '.bs-hidden': {
+    '.b-hid': {
       borderStyle: 'hidden',
     },
-    '.bs-no': {
+    '.b-no': {
       borderStyle: 'none',
     },
     /* border-width */
     ...generateBorderWidth('bw'),
-    ...generateBorderWidthForSides('bw-l', ['left']),
-    ...generateBorderWidthForSides('bw-r', ['right']),
-    ...generateBorderWidthForSides('bw-t', ['top']),
-    ...generateBorderWidthForSides('bw-b', ['bottom']),
-    ...generateBorderWidthForSides('bw-x', ['left', 'right']),
-    ...generateBorderWidthForSides('bw-y', ['top', 'bottom']),
+    ...generateBorderWidthForSides('b-w-l', ['left']),
+    ...generateBorderWidthForSides('b-w-r', ['right']),
+    ...generateBorderWidthForSides('b-w-t', ['top']),
+    ...generateBorderWidthForSides('b-w-b', ['bottom']),
+    ...generateBorderWidthForSides('b-w-x', ['left', 'right']),
+    ...generateBorderWidthForSides('b-w-y', ['top', 'bottom']),
     /* border-radius */
     ...generateBorderRadius('br'),
-    ...generateBorderRadiusForCorners('br-tl', ['top-left']),
-    ...generateBorderRadiusForCorners('br-tr', ['top-right']),
-    ...generateBorderRadiusForCorners('br-bl', ['bottom-left']),
-    ...generateBorderRadiusForCorners('br-br', ['bottom-right']),
-    ...generateBorderRadiusForCorners('br-t', ['top-left', 'top-right']),
-    ...generateBorderRadiusForCorners('br-b', ['bottom-left', 'bottom-right']),
-    ...generateBorderRadiusForCorners('br-l', ['top-left', 'bottom-left']),
-    ...generateBorderRadiusForCorners('br-r', ['top-right', 'bottom-right']),
+    ...generateBorderRadiusForCorners('b-r-tl', ['top-left']),
+    ...generateBorderRadiusForCorners('b-r-tr', ['top-right']),
+    ...generateBorderRadiusForCorners('b-r-bl', ['bottom-left']),
+    ...generateBorderRadiusForCorners('b-r-br', ['bottom-right']),
+    ...generateBorderRadiusForCorners('b-r-t', ['top-left', 'top-right']),
+    ...generateBorderRadiusForCorners('b-r-b', ['bottom-left', 'bottom-right']),
+    ...generateBorderRadiusForCorners('b-r-l', ['top-left', 'bottom-left']),
+    ...generateBorderRadiusForCorners('b-r-r', ['top-right', 'bottom-right']),
 
     /* === outline === */
     /* outline-color */
-    ...generateColorUtilities('outline-color', 'olc'),
+    ...generateColorUtilities('outline-color', 'ol-c'),
     /* outline-width */
     ...generateOutlineWidth('olw'),
     /* outline-style */

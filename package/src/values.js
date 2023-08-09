@@ -22,6 +22,34 @@ const displayValues = [
   ['no', 'none'],
 ]
 
+const positions = [
+  ['c', 'center'],
+  ['t', 'top'],
+  ['b', 'bottom'],
+  ['l', 'left'],
+  ['r', 'right'],
+  ['lt', 'left top'],
+  ['lb', 'left bottom'],
+  ['rt', 'right top'],
+  ['rb', 'right bottom'],
+]
+
+const objectFits = [
+  ['c', 'contain'],
+  ['v', 'cover'],
+  ['f', 'fill'],
+  ['n', 'none'],
+  ['sd', 'scale-down'],
+]
+
+const overflows = [
+  ['au', 'auto'],
+  ['h', 'hidden'],
+  ['c', 'clip'],
+  ['v', 'visible'],
+  ['s', 'scroll'],
+]
+
 const colorVariants = [
   '50',
   '100',
@@ -272,6 +300,9 @@ const allLengths = [
 
 module.exports = {
   displayValues,
+  positions,
+  objectFits,
+  overflows,
   colorVariants,
   colorsWithNoVariants,
   borderRadii,

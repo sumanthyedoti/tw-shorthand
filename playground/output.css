@@ -1,47 +1,50 @@
-.d-i {
-  display: inline
+.ob-c {
+  -o-object-position: center;
+     object-position: center
 }
 
-.d-f {
-  display: flex
+.ob-v {
+  -o-object-fit: cover;
+     object-fit: cover
 }
 
-.d-t-cl {
-  display: table-cell
+.ob-rt {
+  -o-object-position: right top;
+     object-position: right top
 }
 
-.d-t-c {
-  display: table-column
+.ov-h {
+  overflow: hidden
 }
 
-.d-t-c-g {
-  display: table-column-group
+.ov-s {
+  overflow: scroll
 }
 
-.d-t-r-g {
-  display: table-row-group
+.ov-x-au {
+  overflow-x: auto
 }
 
-.d-t-r {
-  display: table-row
+.ov-y-s {
+  overflow-y: scroll
 }
 
-.d-ig {
-  display: inline-grid
-}
-
-.d-no {
-  display: none
+.bg-rt {
+  background-position: right top
 }
 
 .hello {
-  display: inline;
-  display: flex;
-  display: table-cell;
-  display: table-column;
-  display: table-column-group;
-  display: table-row-group;
-  display: table-row;
-  display: inline-grid;
-  display: none
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-fit: fill;
+     object-fit: fill;
+  -o-object-position: right top;
+     object-position: right top;
+  overflow: hidden;
+  overflow: scroll;
+  overflow-x: auto;
+  overflow-y: scroll;
+  background-position: right top
 }
