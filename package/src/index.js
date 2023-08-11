@@ -22,6 +22,7 @@ const {
   positions,
   objectFits,
   overflows,
+  flexOrders,
 } = require('./values')
 
 module.exports = plugin(function ({ addUtilities, addVariant }) {
@@ -31,7 +32,7 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
 
     /* === flex === */
     /* flex-basis */
-    ...generateUtilities('flex-basis', 'fb', allLengths),
+    ...generateUtilities('flex-basis', 'f-b', allLengths),
 
     /* flex-dreiction */
     '.f-r': {
@@ -46,6 +47,35 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     '.f-cr': {
       flexDirection: 'column-reverse',
     },
+    /* flex  */
+    '.f-1': {
+      flex: '1 1 0%',
+    },
+    '.f-au': {
+      flex: '1 1 auto',
+    },
+    '.f-in': {
+      flex: '0 1 auto',
+    },
+    '.f-no': {
+      flex: 'none',
+    },
+    /* flex-grow */
+    '.f-g-1': {
+      flexGrow: '1',
+    },
+    '.f-g-0': {
+      flexGrow: '0',
+    },
+    /* flex-shrink */
+    '.f-s-1': {
+      flexShrink: '1',
+    },
+    '.f-s-0': {
+      flexShrink: '0',
+    },
+    /* order */
+    ...generateUtilities('order', 'ord', flexOrders),
     /* flex-wrap  */
     '.f-w': {
       flexWrap: 'wrap',

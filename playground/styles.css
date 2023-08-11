@@ -1,4 +1,4 @@
 @import 'tailwindcss/utilities';
 .hello {
-  @apply ov-s ov-h ov-x-au ov-y-s ob-rt bg-rt ob-v ob-c ob-f;
+  @apply f-g-0 f-s-1 f-in ord-4 ord-no;
 }

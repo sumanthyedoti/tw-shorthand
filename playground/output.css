@@ -1,50 +1,23 @@
-.ob-c {
-  -o-object-position: center;
-     object-position: center
+.f-in {
+  flex: 0 1 auto
 }
 
-.ob-v {
-  -o-object-fit: cover;
-     object-fit: cover
+.f-g-0 {
+  flex-grow: 0
 }
 
-.ob-rt {
-  -o-object-position: right top;
-     object-position: right top
+.f-s-1 {
+  flex-shrink: 1
 }
 
-.ov-h {
-  overflow: hidden
-}
-
-.ov-s {
-  overflow: scroll
-}
-
-.ov-x-au {
-  overflow-x: auto
-}
-
-.ov-y-s {
-  overflow-y: scroll
-}
-
-.bg-rt {
-  background-position: right top
+.ord-4 {
+  order: 4
 }
 
 .hello {
-  -o-object-position: center;
-     object-position: center;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-fit: fill;
-     object-fit: fill;
-  -o-object-position: right top;
-     object-position: right top;
-  overflow: hidden;
-  overflow: scroll;
-  overflow-x: auto;
-  overflow-y: scroll;
-  background-position: right top
+  flex: 0 1 auto;
+  flex-grow: 0;
+  flex-shrink: 1;
+  order: 4;
+  order: none
 }

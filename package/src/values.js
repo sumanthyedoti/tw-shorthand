@@ -50,6 +50,24 @@ const overflows = [
   ['s', 'scroll'],
 ]
 
+const flexOrders = [
+  ['1', '1'],
+  ['2', '2'],
+  ['3', '3'],
+  ['4', '4'],
+  ['5', '5'],
+  ['6', '6'],
+  ['7', '7'],
+  ['8', '8'],
+  ['9', '9'],
+  ['10', '10'],
+  ['11', '11'],
+  ['12', '12'],
+  ['first', 'first'],
+  ['last', 'last'],
+  ['no', 'none'],
+]
+
 const colorVariants = [
   '50',
   '100',
@@ -303,6 +321,7 @@ module.exports = {
   positions,
   objectFits,
   overflows,
+  flexOrders,
   colorVariants,
   colorsWithNoVariants,
   borderRadii,
