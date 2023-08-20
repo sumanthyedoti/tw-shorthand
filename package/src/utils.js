@@ -146,11 +146,11 @@ const generateTransformSkew = (prefix, axis) => {
   return utils
 }
 
-const generateUtilities = (property, prefix, values, getValue = null) => {
+const generateUtilities = (property, prefix, values) => {
   const utils = {}
   for (const [variant, value] of values) {
     utils[`.${prefix}-${variant}`] = {
-      [property]: getValue ? getValue(value) : value,
+      [property]: value,
     }
   }
   return utils

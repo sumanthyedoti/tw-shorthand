@@ -25,6 +25,12 @@ const {
   fontWeights,
   elementColumns,
   rows,
+  gridTemplateColumns,
+  gridTemplateRows,
+  gridColumns,
+  gridColumnStart,
+  gridColumnEnd,
+  gridRows,
 } = require('./values')
 
 module.exports = plugin(function ({ addUtilities, addVariant }) {
@@ -110,24 +116,25 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     },
 
     /* grid */
+    ...generateUtilities('grid-template-columns', 'g-t-c', gridTemplateColumns),
+    ...generateUtilities('grid-template-rows', 'g-t-r', gridTemplateRows),
+
+    ...generateUtilities('grid-column', 'g-c', gridColumns),
+    ...generateUtilities('grid-column-start', 'g-c-s', gridColumnStart),
+    ...generateUtilities('grid-column-end', 'g-c-e', gridColumnEnd),
+
+    ...generateUtilities('grid-row', 'g-r', gridRows),
+    ...generateUtilities('grid-row-start', 'g-r-s', gridColumnStart),
+    ...generateUtilities('grid-row-end', 'g-r-e', gridColumnEnd),
+
     ...generateUtilities(
-      'grid-template-columns',
-      'g-t-c',
+      'grid-column',
+      'g-c',
       columns,
       (value) => `repeat(${value}, minmax(0, 1fr))`
     ),
     '.g-t-c-no': {
       gridTemplateColumns: 'none',
-    },
-
-    ...generateUtilities(
-      'grid-template-rows',
-      'g-t-r',
-      columns,
-      (value) => `repeat(${value}, minmax(0, 1fr))`
-    ),
-    '.g-t-r-no': {
-      gridTemplateRows: 'none',
     },
 
     /* position */

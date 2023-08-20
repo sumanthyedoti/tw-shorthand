@@ -82,7 +82,7 @@ const borderRadii = [
   ['xl', '0.75rem'],
   ['2xl', '1rem'],
   ['3xl', '1.5rem'],
-  ['full', '9999px'],
+  ['fu', '9999px'],
 ]
 
 const borderWidths = [
@@ -161,7 +161,7 @@ const transformRotates = [
   ['6\\/8', '270deg'],
   ['3\\/4', '270deg'],
   ['7\\/8', '315deg'],
-  ['full', '360deg'],
+  ['fu', '360deg'],
 ]
 
 const transformOrigins = [
@@ -213,7 +213,7 @@ const numericLengths = [
   ['72', '18rem'],
   ['80', '20rem'],
   ['96', '24rem'],
-  ['full', '100%'],
+  ['fu', '100%'],
 ]
 
 const percentageLengths_2_3_4 = [
@@ -288,6 +288,51 @@ const flexOrders = [
   ['no', 'none'],
 ]
 
+const gridTemplateRows = [
+  ['1', 'repeat(1, minmax(0, 1fr))'],
+  ['2', 'repeat(2, minmax(0, 2fr))'],
+  ['3', 'repeat(3, minmax(0, 3fr))'],
+  ['4', 'repeat(4, minmax(0, 4fr))'],
+  ['5', 'repeat(5, minmax(0, 5fr))'],
+  ['6', 'repeat(6, minmax(0, 6fr))'],
+  ['no', 'none'],
+]
+
+const gridTemplateColumns = [
+  ...gridTemplateRows,
+  ['7', 'repeat(7, minmax(0, 7fr))'],
+  ['8', 'repeat(8, minmax(0, 8fr))'],
+  ['9', 'repeat(9, minmax(0, 9fr))'],
+  ['10', 'repeat(10, minmax(0, 10fr))'],
+  ['11', 'repeat(11, minmax(0, 11fr))'],
+  ['12', 'repeat(12, minmax(0, 12fr))'],
+]
+
+const gridRows = [
+  ['au', 'auto'],
+  ['1\\/1', 'span 1 / span 1'],
+  ['2\\/2', 'span 2 / span 2'],
+  ['3\\/3', 'span 3 / span 3'],
+  ['4\\/4', 'span 4 / span 4'],
+  ['5\\/5', 'span 5 / span 5'],
+  ['6\\/6', 'span 6 / span 6'],
+  ['fu', '1 / -1'],
+]
+const gridRowStart = [...rows, ['7', '7'], ['au', 'auto']]
+const gridRowEnd = gridRowStart
+
+const gridColumns = [
+  ...gridRows,
+  ['7\\/7', 'span 7 / span 7'],
+  ['8\\/8', 'span 8 / span 8'],
+  ['9\\/9', 'span 9 / span 9'],
+  ['10\\/10', 'span 10 / span 10'],
+  ['11\\/11', 'span 11 / span 11'],
+  ['12\\/12', 'span 12 / span 12'],
+]
+const gridColumnStart = [...columns, ['13', '13'], ['au', 'auto']]
+const gridColumnEnd = gridColumnStart
+
 const elementColumns = [
   ...columns,
   ['au', 'auto'],
@@ -321,6 +366,14 @@ module.exports = {
   flexOrders,
   rows,
   columns,
+  gridTemplateRows,
+  gridTemplateColumns,
+  gridColumnStart,
+  gridColumnEnd,
+  gridRowStart,
+  gridRowEnd,
+  gridColumns,
+  gridRows,
   colorVariants,
   colorsWithNoVariants,
   borderRadii,
