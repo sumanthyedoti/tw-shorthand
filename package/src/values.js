@@ -330,8 +330,26 @@ const gridColumns = [
   ['11\\/11', 'span 11 / span 11'],
   ['12\\/12', 'span 12 / span 12'],
 ]
+
 const gridColumnStart = [...columns, ['13', '13'], ['au', 'auto']]
 const gridColumnEnd = gridColumnStart
+
+const gridAutoFlows = [
+  ['r', 'row'],
+  ['c', 'column'],
+  ['d', 'dense'],
+  ['rd', 'row dense'],
+  ['cd', 'column dense'],
+]
+
+const gridAutoRows = [
+  ['au', 'auto'],
+  ['min', 'min-content'],
+  ['max', 'max-content'],
+  ['fr', 'minmax(0, 1fr)'],
+]
+
+const gridAutoColumns = gridAutoRows
 
 const elementColumns = [
   ...columns,
@@ -374,6 +392,9 @@ module.exports = {
   gridRowEnd,
   gridColumns,
   gridRows,
+  gridAutoFlows,
+  gridAutoColumns,
+  gridAutoRows,
   colorVariants,
   colorsWithNoVariants,
   borderRadii,

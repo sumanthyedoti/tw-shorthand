@@ -31,6 +31,9 @@ const {
   gridColumnStart,
   gridColumnEnd,
   gridRows,
+  gridAutoFlows,
+  gridAutoColumns,
+  gridAutoRows,
 } = require('./values')
 
 module.exports = plugin(function ({ addUtilities, addVariant }) {
@@ -126,6 +129,10 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     ...generateUtilities('grid-row', 'g-r', gridRows),
     ...generateUtilities('grid-row-start', 'g-r-s', gridColumnStart),
     ...generateUtilities('grid-row-end', 'g-r-e', gridColumnEnd),
+
+    ...generateUtilities('grid-auto-flow', 'g-a-f', gridAutoFlows),
+    ...generateUtilities('grid-auto-columns', 'g-a-c', gridAutoColumns),
+    ...generateUtilities('grid-auto-rows', 'g-a-r', gridAutoRows),
 
     ...generateUtilities(
       'grid-column',
