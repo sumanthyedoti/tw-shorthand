@@ -7,7 +7,6 @@ const {
   generateOutlineWidth,
   generateBorderRadius,
   generateBorderRadiusForCorners,
-  generateFontWeight,
   generateTransformScale,
   generateTransformRotate,
   generateTransformOrigin,
@@ -23,6 +22,9 @@ const {
   objectFits,
   overflows,
   flexOrders,
+  fontWeights,
+  elementColumns,
+  rows,
 } = require('./values')
 
 module.exports = plugin(function ({ addUtilities, addVariant }) {
@@ -87,24 +89,45 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
       flexWrap: 'none',
     },
     /* justify-content */
-    '.j-s': {
+    '.jc-s': {
       justifyContent: 'flex-start',
     },
-    '.j-c': {
+    '.jc-c': {
       justifyContent: 'sapce-between',
     },
-    '.j-e': {
+    '.jc-e': {
       justifyContent: 'flex-end',
     },
     /* align-items */
-    '.a-s': {
+    '.ai-s': {
       alignItems: 'flex-start',
     },
-    '.a-c': {
+    '.ai-c': {
       alignItems: 'sapce-between',
     },
-    '.a-e': {
+    '.ai-e': {
       alignItems: 'flex-end',
+    },
+
+    /* grid */
+    ...generateUtilities(
+      'grid-template-columns',
+      'g-t-c',
+      columns,
+      (value) => `repeat(${value}, minmax(0, 1fr))`
+    ),
+    '.g-t-c-no': {
+      gridTemplateColumns: 'none',
+    },
+
+    ...generateUtilities(
+      'grid-template-rows',
+      'g-t-r',
+      columns,
+      (value) => `repeat(${value}, minmax(0, 1fr))`
+    ),
+    '.g-t-r-no': {
+      gridTemplateRows: 'none',
     },
 
     /* position */
@@ -139,7 +162,7 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     ...generateUtilities('background-position', 'bg', positions),
 
     /* columns */
-    ...generateUtilities('columns', 'cols', columns),
+    ...generateUtilities('columns', 'cols', elementColumns),
 
     /* box-decoration-break */
     '.box-decor-cl': {
@@ -271,7 +294,7 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
 
     /* === font === */
     /* font-weight */
-    ...generateFontWeight('fw'),
+    ...generateUtilities('font-weight', 'fw', fontWeights),
     /* font-style */
     '.fs-i': {
       fontStyle: 'italic',

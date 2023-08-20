@@ -3,7 +3,6 @@ const colors = require('tailwindcss/colors')
 const {
   colorVariants,
   colorsWithNoVariants,
-  fontWeights,
   borderWidths,
   borderRadii,
   transformRotates,
@@ -11,7 +10,6 @@ const {
   transformOrigins,
   translateLengths,
   skewRadii,
-  allLengths,
 } = require('./values')
 
 const getVariant = (variant) => parseInt(variant) / 10
@@ -98,16 +96,6 @@ const generateOutlineWidth = (prefix) => {
   return utils
 }
 
-const generateFontWeight = (prefix) => {
-  const utils = {}
-  for (const [variant, size] of fontWeights) {
-    utils[`.${prefix}-${variant}`] = {
-      'font-weight': size,
-    }
-  }
-  return utils
-}
-
 const generateTransformScale = (prefix) => {
   const utils = {}
   for (const [variant, size] of transformScales) {
@@ -158,11 +146,11 @@ const generateTransformSkew = (prefix, axis) => {
   return utils
 }
 
-const generateUtilities = (property, prefix, values) => {
+const generateUtilities = (property, prefix, values, getValue = null) => {
   const utils = {}
   for (const [variant, value] of values) {
     utils[`.${prefix}-${variant}`] = {
-      [property]: value,
+      [property]: getValue ? getValue(value) : value,
     }
   }
   return utils
@@ -175,7 +163,6 @@ module.exports = {
   generateOutlineWidth,
   generateBorderRadius,
   generateBorderRadiusForCorners,
-  generateFontWeight,
   generateTransformScale,
   generateTransformRotate,
   generateTransformOrigin,

@@ -50,24 +50,6 @@ const overflows = [
   ['s', 'scroll'],
 ]
 
-const flexOrders = [
-  ['1', '1'],
-  ['2', '2'],
-  ['3', '3'],
-  ['4', '4'],
-  ['5', '5'],
-  ['6', '6'],
-  ['7', '7'],
-  ['8', '8'],
-  ['9', '9'],
-  ['10', '10'],
-  ['11', '11'],
-  ['12', '12'],
-  ['first', 'first'],
-  ['last', 'last'],
-  ['no', 'none'],
-]
-
 const colorVariants = [
   '50',
   '100',
@@ -197,13 +179,13 @@ const transformOrigins = [
 const numericLengths = [
   ['0', '0'],
   ['px', '1px'],
-  ['0.5', '0.125rem'],
+  ['0\\.5', '0.125rem'],
   ['1', '0.25rem'],
-  ['1.5', '0.375rem'],
+  ['1\\.5', '0.375rem'],
   ['2', '0.5rem'],
-  ['2.5', '0.625rem'],
+  ['2\\.5', '0.625rem'],
   ['3', '0.75rem'],
-  ['3.5', '0.875rem'],
+  ['3\\.5', '0.875rem'],
   ['4', '1rem'],
   ['5', '1.25rem'],
   ['6', '1.5rem'],
@@ -281,18 +263,33 @@ const skewRadii = [
   ['25', '25deg'],
 ]
 
-const columns = [
+const rows = [
   ['1', '1'],
-  ['2', '1'],
+  ['2', '2'],
   ['3', '3'],
   ['4', '4'],
   ['5', '5'],
   ['6', '6'],
+]
+const columns = [
+  ...rows,
   ['7', '7'],
   ['8', '8'],
+  ['9', '9'],
   ['10', '10'],
   ['11', '11'],
   ['12', '12'],
+]
+
+const flexOrders = [
+  ...columns,
+  ['first', 'first'],
+  ['last', 'last'],
+  ['no', 'none'],
+]
+
+const elementColumns = [
+  ...columns,
   ['au', 'auto'],
   ['3xs', '16rem'],
   ['2xs', '18rem'],
@@ -322,6 +319,8 @@ module.exports = {
   objectFits,
   overflows,
   flexOrders,
+  rows,
+  columns,
   colorVariants,
   colorsWithNoVariants,
   borderRadii,
@@ -333,5 +332,5 @@ module.exports = {
   translateLengths,
   allLengths,
   skewRadii,
-  columns,
+  elementColumns,
 }
