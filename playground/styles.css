@@ -1,4 +1,4 @@
 @import 'tailwindcss/utilities';
 .hello {
-  @apply f-g-0 f-s-1 f-in ord-4 ord-no;
+  @apply c-slate-90;
 }

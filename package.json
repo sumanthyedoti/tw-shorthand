@@ -11,6 +11,9 @@
   "author": "Sumanth Yedoti",
   "repository": "https://github.com/sumanthyedoti/tw-shorthand",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "example:start": "pnpm --filter example start",
+    "example:build": "pnpm --filter example build",
+    "example:serve": "pnpm --filter example serve",
+    "playground:build": "pnpm --filter playground build"
   }
 }

@@ -216,6 +216,23 @@ const numericLengths = [
   ['fu', '100%'],
 ]
 
+const lineHeights = [
+  ['3', '0.75rem'],
+  ['4', '1rem'],
+  ['5', '1.25rem'],
+  ['6', '1.5rem'],
+  ['7', '1.75rem'],
+  ['8', '2rem'],
+  ['9', '2.25rem'],
+  ['10', '2.5rem'],
+  ['no', 'none'],
+  ['tight', '1.25rem'],
+  ['snug', '1.375rem'],
+  ['nl', '1.5rem'],
+  ['relaxed', '1.625rem'],
+  ['loose', '2rem'],
+]
+
 const percentageLengths_2_3_4 = [
   ['1\\/2', '50%'],
   ['1\\/3', '33.333333%'],
@@ -353,7 +370,7 @@ const justifyItems = [
   ['s', 'flex-start'],
   ['e', 'flex-end'],
   ['c', 'center'],
-  ['str', 'stretch'],
+  ['tt', 'stretch'],
 ]
 const justifyContent = [
   ...justifyItems,
@@ -430,6 +447,7 @@ module.exports = {
   borderRadii,
   borderWidths,
   fontWeights,
+  lineHeights,
   transformScales,
   transformRotates,
   transformOrigins,

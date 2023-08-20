@@ -16,13 +16,13 @@ const {
 } = require('./utils')
 const {
   allLengths,
-  columns,
   displayValues,
   positions,
   objectFits,
   overflows,
   flexOrders,
   fontWeights,
+  lineHeights,
   elementColumns,
   gridTemplateColumns,
   gridTemplateRows,
@@ -107,20 +107,20 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     },
 
     /* grid */
-    ...generateUtilities('grid-template-columns', 'g-t-c', gridTemplateColumns),
-    ...generateUtilities('grid-template-rows', 'g-t-r', gridTemplateRows),
+    ...generateUtilities('grid-template-columns', 'g-tc', gridTemplateColumns),
+    ...generateUtilities('grid-template-rows', 'g-tr', gridTemplateRows),
 
     ...generateUtilities('grid-column', 'g-c', gridColumns),
-    ...generateUtilities('grid-column-start', 'g-c-s', gridColumnStart),
-    ...generateUtilities('grid-column-end', 'g-c-e', gridColumnEnd),
+    ...generateUtilities('grid-column-start', 'g-cs', gridColumnStart),
+    ...generateUtilities('grid-column-end', 'g-ce', gridColumnEnd),
 
     ...generateUtilities('grid-row', 'g-r', gridRows),
-    ...generateUtilities('grid-row-start', 'g-r-s', gridColumnStart),
-    ...generateUtilities('grid-row-end', 'g-r-e', gridColumnEnd),
+    ...generateUtilities('grid-row-start', 'g-rs', gridColumnStart),
+    ...generateUtilities('grid-row-end', 'g-re', gridColumnEnd),
 
-    ...generateUtilities('grid-auto-flow', 'g-a-f', gridAutoFlows),
-    ...generateUtilities('grid-auto-columns', 'g-a-c', gridAutoColumns),
-    ...generateUtilities('grid-auto-rows', 'g-a-r', gridAutoRows),
+    ...generateUtilities('grid-auto-flow', 'g-af', gridAutoFlows),
+    ...generateUtilities('grid-auto-columns', 'g-ac', gridAutoColumns),
+    ...generateUtilities('grid-auto-rows', 'g-ar', gridAutoRows),
 
     ...generateUtilities('justify-content', 'jc', justifyContent),
     ...generateUtilities('justify-items', 'ji', justifyItems),
@@ -131,6 +131,52 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     ...generateUtilities('place-content', 'pc', placeContent),
     ...generateUtilities('place-items', 'pi', placeItems),
     ...generateUtilities('place-self', 'ps', placeSelf),
+
+    /* auto, full, none */
+    '.bg-no': {
+      backgroundImage: 'none',
+    },
+    '.w-fu': {
+      width: '100%',
+    },
+    '.h-fu': {
+      height: '100%',
+    },
+    '.w-au': {
+      width: 'auto',
+    },
+    '.h-au': {
+      height: 'auto',
+    },
+    '.m-au': {
+      margin: 'auto',
+    },
+    '.mx-au': {
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    },
+    '.my-au': {
+      marginTop: 'auto',
+      marginBottom: 'auto',
+    },
+    '.ms-au': {
+      marginInlineStart: 'auto',
+    },
+    '.me-au': {
+      marginInlineEnd: 'auto',
+    },
+    '.mt-au': {
+      marginTop: 'auto',
+    },
+    '.mb-au': {
+      marginBottom: 'auto',
+    },
+    '.mr-au': {
+      marginRight: 'auto',
+    },
+    '.ml-au': {
+      marginLeft: 'auto',
+    },
 
     /* position */
     '.p-s': {
@@ -253,23 +299,23 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
       borderStyle: 'none',
     },
     /* border-width */
-    ...generateBorderWidth('bw'),
-    ...generateBorderWidthForSides('b-w-l', ['left']),
-    ...generateBorderWidthForSides('b-w-r', ['right']),
-    ...generateBorderWidthForSides('b-w-t', ['top']),
-    ...generateBorderWidthForSides('b-w-b', ['bottom']),
-    ...generateBorderWidthForSides('b-w-x', ['left', 'right']),
-    ...generateBorderWidthForSides('b-w-y', ['top', 'bottom']),
+    ...generateBorderWidth('bow'),
+    ...generateBorderWidthForSides('bow-l', ['left']),
+    ...generateBorderWidthForSides('bow-r', ['right']),
+    ...generateBorderWidthForSides('bow-t', ['top']),
+    ...generateBorderWidthForSides('bow-b', ['bottom']),
+    ...generateBorderWidthForSides('bow-x', ['left', 'right']),
+    ...generateBorderWidthForSides('bow-y', ['top', 'bottom']),
     /* border-radius */
-    ...generateBorderRadius('br'),
-    ...generateBorderRadiusForCorners('b-r-tl', ['top-left']),
-    ...generateBorderRadiusForCorners('b-r-tr', ['top-right']),
-    ...generateBorderRadiusForCorners('b-r-bl', ['bottom-left']),
-    ...generateBorderRadiusForCorners('b-r-br', ['bottom-right']),
-    ...generateBorderRadiusForCorners('b-r-t', ['top-left', 'top-right']),
-    ...generateBorderRadiusForCorners('b-r-b', ['bottom-left', 'bottom-right']),
-    ...generateBorderRadiusForCorners('b-r-l', ['top-left', 'bottom-left']),
-    ...generateBorderRadiusForCorners('b-r-r', ['top-right', 'bottom-right']),
+    ...generateBorderRadius('bor'),
+    ...generateBorderRadiusForCorners('bor-tl', ['top-left']),
+    ...generateBorderRadiusForCorners('bor-tr', ['top-right']),
+    ...generateBorderRadiusForCorners('bor-bl', ['bottom-left']),
+    ...generateBorderRadiusForCorners('bor-br', ['bottom-right']),
+    ...generateBorderRadiusForCorners('bor-t', ['top-left', 'top-right']),
+    ...generateBorderRadiusForCorners('bor-b', ['bottom-left', 'bottom-right']),
+    ...generateBorderRadiusForCorners('bor-l', ['top-left', 'bottom-left']),
+    ...generateBorderRadiusForCorners('bor-r', ['top-right', 'bottom-right']),
 
     /* === outline === */
     /* outline-color */
@@ -363,6 +409,9 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
       fontSize: '8rem', // 128px
       lineHeight: 1,
     },
+
+    /* line-height */
+    ...generateUtilities('line-height', 'lh', lineHeights),
 
     /* === transforms === */
     /* scale */
