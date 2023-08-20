@@ -349,6 +349,27 @@ const gridAutoRows = [
   ['fr', 'minmax(0, 1fr)'],
 ]
 
+const justifyItems = [
+  ['s', 'flex-start'],
+  ['e', 'flex-end'],
+  ['c', 'center'],
+  ['str', 'stretch'],
+]
+const justifyContent = [
+  ...justifyItems,
+  ['nl', 'normal'],
+  ['w', 'space-between'],
+  ['a', 'space-around'],
+  ['v', 'space-evenly'],
+]
+const justifySelf = [...justifyItems, ['au', 'auto']]
+const alignContent = [...justifyContent, ['bl', 'baseline']]
+const alignItems = [...justifyItems, ['bl', 'baseline']]
+const alignSelf = [...justifyItems, ['au', 'auto'], ['bl', 'baseline']]
+const placeContent = alignContent
+const placeItems = alignItems
+const placeSelf = [...justifyItems, ['au', 'auto']]
+
 const gridAutoColumns = gridAutoRows
 
 const elementColumns = [
@@ -395,6 +416,15 @@ module.exports = {
   gridAutoFlows,
   gridAutoColumns,
   gridAutoRows,
+  justifyContent,
+  justifyItems,
+  justifySelf,
+  alignContent,
+  alignItems,
+  alignSelf,
+  placeContent,
+  placeItems,
+  placeSelf,
   colorVariants,
   colorsWithNoVariants,
   borderRadii,

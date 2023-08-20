@@ -24,7 +24,6 @@ const {
   flexOrders,
   fontWeights,
   elementColumns,
-  rows,
   gridTemplateColumns,
   gridTemplateRows,
   gridColumns,
@@ -34,6 +33,15 @@ const {
   gridAutoFlows,
   gridAutoColumns,
   gridAutoRows,
+  justifyContent,
+  justifyItems,
+  justifySelf,
+  alignContent,
+  alignItems,
+  alignSelf,
+  placeContent,
+  placeItems,
+  placeSelf,
 } = require('./values')
 
 module.exports = plugin(function ({ addUtilities, addVariant }) {
@@ -97,26 +105,6 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     '.f-w-no': {
       flexWrap: 'none',
     },
-    /* justify-content */
-    '.jc-s': {
-      justifyContent: 'flex-start',
-    },
-    '.jc-c': {
-      justifyContent: 'sapce-between',
-    },
-    '.jc-e': {
-      justifyContent: 'flex-end',
-    },
-    /* align-items */
-    '.ai-s': {
-      alignItems: 'flex-start',
-    },
-    '.ai-c': {
-      alignItems: 'sapce-between',
-    },
-    '.ai-e': {
-      alignItems: 'flex-end',
-    },
 
     /* grid */
     ...generateUtilities('grid-template-columns', 'g-t-c', gridTemplateColumns),
@@ -134,15 +122,15 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     ...generateUtilities('grid-auto-columns', 'g-a-c', gridAutoColumns),
     ...generateUtilities('grid-auto-rows', 'g-a-r', gridAutoRows),
 
-    ...generateUtilities(
-      'grid-column',
-      'g-c',
-      columns,
-      (value) => `repeat(${value}, minmax(0, 1fr))`
-    ),
-    '.g-t-c-no': {
-      gridTemplateColumns: 'none',
-    },
+    ...generateUtilities('justify-content', 'jc', justifyContent),
+    ...generateUtilities('justify-items', 'ji', justifyItems),
+    ...generateUtilities('justify-self', 'js', justifySelf),
+    ...generateUtilities('align-content', 'ac', alignContent),
+    ...generateUtilities('align-items', 'ai', alignItems),
+    ...generateUtilities('align-self', 'as', alignSelf),
+    ...generateUtilities('place-content', 'pc', placeContent),
+    ...generateUtilities('place-items', 'pi', placeItems),
+    ...generateUtilities('place-self', 'ps', placeSelf),
 
     /* position */
     '.p-s': {
