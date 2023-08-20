@@ -1,9 +1,9 @@
 {
-  "name": "example",
+  "name": "with-tailwind",
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "pnpm parcel *.html",
+    "start": "pnpm parcel -p 1235 *.html",
     "build": "rm -rf ./dist && pnpm parcel build *.html",
     "serve": "cd ./dist && npx serve"
   },

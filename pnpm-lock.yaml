@@ -8,11 +8,33 @@ importers:
 
   .: {}
 
-  example:
+  examples/with-shorthand:
     dependencies:
       tw-shorthand:
         specifier: workspace:^1.0.0
-        version: link:../package
+        version: link:../../package
+    devDependencies:
+      autoprefixer:
+        specifier: ^10.4.15
+        version: 10.4.15(postcss@8.4.27)
+      parcel:
+        specifier: ^2.9.3
+        version: 2.9.3(postcss@8.4.27)
+      postcss:
+        specifier: ^8.4.27
+        version: 8.4.27
+      postcss-import:
+        specifier: ^15.1.0
+        version: 15.1.0(postcss@8.4.27)
+      tailwindcss:
+        specifier: ^3.3.3
+        version: 3.3.3
+
+  examples/with-tailwind:
+    dependencies:
+      tw-shorthand:
+        specifier: workspace:^1.0.0
+        version: link:../../package
     devDependencies:
       autoprefixer:
         specifier: ^10.4.15
