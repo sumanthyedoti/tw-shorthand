@@ -1,7 +1,10 @@
+/** @type {import('tailwindcss').Config} */
 const shorthand = require('tw-shorthand')
-
-module.exports = {
-  content: ['./**/*.{html,js,jsx}'],
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {},
   },
