@@ -1,6 +1,6 @@
 const Testimonial = () => {
   return (
-    <div>
+    <div className='p-r'>
       <div className='d-f min-h-screen ai-c jc-c bg-neutral-800'>
         <div className='d-g g-tc-1 gap-5 md:g-tc-2 lg:g-tc-3'>
           <div className='group p-r cu-pointer ai-c jc-c ov-h tr-sh h:s-xl h:shadow-black/30'>
@@ -69,10 +69,10 @@ const Testimonial = () => {
           </div>
         </div>
       </div>
-      <div className='fixed bottom-16'>
-        <p className='font-com text-sm font-semibold text-white'>
+      <div className='p-a bottom-4 left-4'>
+        <p className='font-com fz-sm c-white'>
           All Images are from{' '}
-          <a href='https://unsplash.com' className='text-blue-500'>
+          <a href='https://unsplash.com' className='c-blue-50'>
             Unsplash.com
           </a>
         </p>
