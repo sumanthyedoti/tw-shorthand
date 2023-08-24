@@ -42,6 +42,7 @@ const {
   placeContent,
   placeItems,
   placeSelf,
+  letterSpacings,
 } = require('./values')
 
 module.exports = plugin(function ({ addUtilities, addVariant }) {
@@ -412,6 +413,8 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
 
     /* line-height */
     ...generateUtilities('line-height', 'lh', lineHeights),
+    /* letter-spacing */
+    ...generateUtilities('letter-spacing', 'ls', letterSpacings),
 
     /* === transforms === */
     /* scale */

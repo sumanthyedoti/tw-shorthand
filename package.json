@@ -11,9 +11,10 @@
   "author": "Sumanth Yedoti",
   "repository": "https://github.com/sumanthyedoti/tw-shorthand",
   "scripts": {
-    "example:start": "pnpm --filter with-* start",
-    "example:build": "pnpm --filter with-* build",
-    "example:serve": "pnpm --filter with-* serve",
+    "examples:dev": "pnpm --filter with-* dev",
+    "examples:build": "pnpm --filter with-* build",
+    "examples:serve": "pnpm --filter with-* serve",
+    "shorthand:dev": "pnpm --filter with-shorthand dev",
     "playground:build": "pnpm --filter playground build"
   }
 }

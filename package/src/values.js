@@ -233,6 +233,15 @@ const lineHeights = [
   ['loose', '2rem'],
 ]
 
+const letterSpacings = [
+  ['tt', '-0.05em'],
+  ['t', '-0.025em'],
+  ['nl', '0em'],
+  ['w', '0.025em'],
+  ['ww', '0.05em'],
+  ['www', '0.1em'],
+]
+
 const percentageLengths_2_3_4 = [
   ['1\\/2', '50%'],
   ['1\\/3', '33.333333%'],
@@ -448,6 +457,7 @@ module.exports = {
   borderWidths,
   fontWeights,
   lineHeights,
+  letterSpacings,
   transformScales,
   transformRotates,
   transformOrigins,

@@ -12,8 +12,6 @@ const {
   skewRadii,
 } = require('./values')
 
-const getVariant = (variant) => parseInt(variant) / 10
-
 const generateColorUtilities = (property, prefix) => {
   const utils = {}
   const colorsWithVariants = Object.keys(colors).filter(
@@ -21,7 +19,7 @@ const generateColorUtilities = (property, prefix) => {
   )
   for (const color of colorsWithVariants) {
     for (const variant of colorVariants) {
-      utils[`.${prefix}-${color}-${getVariant(variant)}`] = {
+      utils[`.${prefix}-${color}-${variant}`] = {
         [property]: colors[color][variant],
       }
     }
