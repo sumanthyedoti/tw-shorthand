@@ -33,27 +33,27 @@ const Pricing = () => {
       {/* :INDIVIDUAL PRICING */}
       <div className='z-10 w-fu d-f f-cr lg:f-r jc-c max-w-7xl'>
         {/* ::Title and actions */}
-        <div className='mt-10 lg:mr-5 d-f f-c flex-shrink-0 c-white'>
+        <div className='mt-10 lg:mr-5 d-f f-c f-s-0 c-white'>
           {/* Offer name */}
-          <span className='text-sm font-light ls-wst antialiased'>
+          <span className='fz-sm font-light ls-wst antialiased'>
             Fancy Pricing Table 10
           </span>
           {/* Title */}
-          <h2 className='py-5 text-3xl sm:fz-5xl leading-snug'>
+          <h2 className='py-5 fz-3xl sm:fz-5xl lh-snug'>
             Only pay once, own it forever. <br />
             No matter where you go.
           </h2>
           {/* Buttons */}
-          <div className='mt-8 d-f f-c sm:flex-row space-y-3 sm:space-y-0 text-center'>
+          <div className='mt-8 d-f f-c sm:f-r space-y-3 sm:space-y-0 t-center'>
             <a
               href='#link'
-              className='mr-8 py-3 px-6 w-fu sm:w-auto bg-gray-800 bor-3xl fz-lg ls-w font-medium transition-all duration-150 transform h:bg-gray-700'
+              className='mr-8 py-3 px-6 w-fu sm:w-au bg-gray-800 bor-3xl fz-lg ls-w fw-md transition-all duration-150 transform h:bg-gray-700'
             >
               Get your lifetime access
             </a>
             <a
               href='#link'
-              className='py-3 px-6 w-fu sm:w-auto bg-gray-50 bor-3xl fz-lg c-gray-800 ls-w font-medium transition-all duration-150 transform h:bg-gray-100'
+              className='py-3 px-6 w-fu sm:w-au bg-gray-50 bor-3xl fz-lg c-gray-800 ls-w fw-md transition-all duration-150 transform h:bg-gray-100'
             >
               You are a team ? Contact Us.
             </a>
@@ -63,19 +63,19 @@ const Pricing = () => {
         {/* ::Lifetime membership details */}
         <div className='lg:ml-5 py-5 px-4 d-f f-c ai-c bg-gray-100 border border-blue-200 sh-lg bor-lg c-gray-800'>
           {/* Title */}
-          <h3 className='text-center text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-tl from-sky-200 to-sky-600'>
+          <h3 className='t-center fz-3xl fw-xb c-transparent bg-clip-text bg-gradient-to-tl from-sky-200 to-sky-600'>
             Lifetime membership <br />{' '}
-            <span className='text-sm font-normal'>(for individual)</span>
+            <span className='fz-sm fw-nl'>(for individual)</span>
           </h3>
           {/* Price */}
-          <p className='py-5 text-6xl font-extrabold'>$289</p>
+          <p className='py-5 text-6xl fw-xb'>$289</p>
           {/* What's included */}
-          <span className='self-start w-fu mt-3 inline-d-f ai-c text-sm text-sky-600 font-medium tt-up'>
-            <span className='flex-shrink-0'>What's included</span>
+          <span className='as-s w-fu mt-3 d-f ai-c fz-sm c-sky-600 fw-md tt-up'>
+            <span className='f-s-0'>What's included</span>
             <span className='w-fu h-px ml-2 bg-gradient-to-l from-sky-200 to-sky-600' />
           </span>
           {/* Features list */}
-          <div className='d-f f-c sm:flex-row'>
+          <div className='d-f f-c sm:f-r'>
             <ul className='d-f f-c px-3'>
               <li className='py-2.5 d-if'>
                 <CheckIcon />
@@ -111,7 +111,7 @@ const Pricing = () => {
       <div className='my-12 w-fu h-px bg-sky-500' />
 
       {/* :TITLE */}
-      <div className='mb-16 text-center c-white'>
+      <div className='mb-16 t-center c-white'>
         <h1 className='font-title py-2 fz-5xl fw-black ls-ww antialiased'>
           Fancy Pricing Table 1
         </h1>
@@ -149,11 +149,11 @@ const Pricing = () => {
               <CheckIcon />
               Maecenas dignissim convallis sem vel.
             </li>
-            <li className='mb-4 inline d-f line-through'>
+            <li className='mb-4 d-if line-through'>
               <XIcon />
               In rhoncus.
             </li>
-            <li className='mb-4 d-f line-through'>
+            <li className='mb-4 d-if line-through'>
               <XIcon />
               Etiam vulputate eleifend.
             </li>
@@ -163,7 +163,7 @@ const Pricing = () => {
             </li>
           </ul>
           {/* Subscribe */}
-          <button className='py-2 px-10 bor-3xl bg-sky-500 fz-lg c-gray-100 f-md ls-w antialiased sh-lg transition du-100 ease-in h:tr-s-105 h:bg-sky-600'>
+          <button className='py-2 px-10 bor-3xl bg-sky-500 fz-lg c-gray-100 f-md ls-w antialiased sh-lg tr du-100 ease-in h:tr-s-105 h:bg-sky-600'>
             Subscribe
           </button>
         </div>
@@ -201,13 +201,13 @@ const Pricing = () => {
               <CheckIcon />
               Etiam vulputate eleifend.
             </li>
-            <li className='mb-4 d-f line-through'>
+            <li className='mb-4 d-if line-through'>
               <XIcon />
               Lorem ipsum dolor.
             </li>
           </ul>
           {/* Subscribe */}
-          <button className='py-2 px-10 bor-3xl bg-sky-500 fz-lg c-gray-100 f-md ls-w antialiased sh-lg transition du-100 ease-in h:tr-s-105 h:bg-sky-600'>
+          <button className='py-2 px-10 bor-3xl bg-sky-500 fz-lg c-gray-100 f-md ls-w antialiased sh-lg tr du-100 ease-in h:tr-s-105 h:bg-sky-600'>
             Subscribe
           </button>
         </div>
@@ -253,7 +253,7 @@ const Pricing = () => {
             </li>
           </ul>
           {/* Subscribe */}
-          <button className='py-2 px-10 bor-3xl bg-sky-500 fz-lg c-gray-100 f-md ls-w antialiased sh-lg transition du-100 ease-in h:tr-s-105 h:bg-sky-600'>
+          <button className='py-2 px-10 bor-3xl bg-sky-500 fz-lg c-gray-100 f-md ls-w antialiased sh-lg tr du-100 ease-in h:tr-s-105 h:bg-sky-600'>
             Subscribe
           </button>
         </div>

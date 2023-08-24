@@ -1,0 +1,4 @@
+- [ ] transition Property
+- [ ] trsnsition duration
+- [ ] box-shadow
+- [ ] drop-shadow

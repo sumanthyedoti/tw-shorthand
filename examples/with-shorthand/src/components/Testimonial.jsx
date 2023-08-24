@@ -72,7 +72,7 @@ const Testimonial = () => {
       <div className='p-a bottom-4 left-4'>
         <p className='font-com fz-sm c-white'>
           All Images are from{' '}
-          <a href='https://unsplash.com' className='c-blue-50'>
+          <a href='https://unsplash.com' className='c-blue-500'>
             Unsplash.com
           </a>
         </p>

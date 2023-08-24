@@ -7,10 +7,10 @@ const Workcation = () => {
     <div className='py-6 px-4 sm:p-6 md:py-10 md:px-8'>
       <div className='max-w-4xl mx-au d-g g-tc-1 lg:max-w-5xl lg:gap-x-20 lg:g-tc-2'>
         <div className='p-r p-3 g-cs-1 g-rs-1 flex f-cr b-r-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-no sm:g-rs-2 sm:p-0 lg:g-rs-1'>
-          <h1 className='mt-1 fz-lg fw-sb c-white sm:c-slate-90 md:fz-2xl dark:sm:c-white'>
+          <h1 className='mt-1 fz-lg fw-sb c-white sm:c-slate-900 md:fz-2xl dark:sm:c-white'>
             Beach House in Collingwood
           </h1>
-          <p className='fz-sm lh-4 fw-md c-white sm:c-slate-50 dark:sm:c-slate-40'>
+          <p className='fz-sm lh-4 fw-md c-white sm:c-slate-500 dark:sm:c-slate-400'>
             Entire house
           </p>
         </div>
@@ -91,7 +91,7 @@ const Workcation = () => {
             Check availability
           </button>
         </div>
-        <p className='mt-4 fz-sm lh-6 g-cs-1 sm:g-c-2/2 lg:mt-6 lg:g-rs-4 lg:g-c-1/1 dark:c-slate-40'>
+        <p className='mt-4 fz-sm lh-6 g-cs-1 sm:g-c-2/2 lg:mt-6 lg:g-rs-4 lg:g-c-1/1 dark:c-slate-400'>
           This sunny and spacious room is for those traveling light and looking
           for a comfy and cosy place to lay their head for a night or two. This
           beach house sits in a vibrant neighborhood littered with cafes, pubs,
