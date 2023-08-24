@@ -1,14 +1,16 @@
 import Workcation from './components/Workcation'
 import Testimonial from './components/Testimonial'
+import Pricing from './components/Pricing'
 
 function App() {
   return (
     <>
       {Array.from({ length: 10 }).map((_, i) => (
-        <>
-          <Workcation key={i} />
-          <Testimonial key={i} />
-        </>
+        <div key={i}>
+          <Workcation />
+          <Testimonial />
+          <Pricing />
+        </div>
       ))}
     </>
   )
