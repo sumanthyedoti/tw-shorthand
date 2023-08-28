@@ -17,7 +17,7 @@ const {
 const {
   allLengths,
   displayValues,
-  positions,
+  boxPositions,
   objectFits,
   overflows,
   flexOrders,
@@ -201,7 +201,7 @@ module.exports = plugin(function({ addUtilities, addVariant }) {
     ...generateUtilities('object-fit', 'ob', objectFits),
 
     /* object-position */
-    ...generateUtilities('object-position', 'ob', positions),
+    ...generateUtilities('object-position', 'ob', boxPositions),
 
     /* overflow */
     ...generateUtilities('overflow', 'ov', overflows),
@@ -212,7 +212,7 @@ module.exports = plugin(function({ addUtilities, addVariant }) {
     ...generateColorUtilities('color', 'c'),
 
     /* background-position */
-    ...generateUtilities('background-position', 'bg', positions),
+    ...generateUtilities('background-position', 'bg', boxPositions),
 
     /* columns */
     ...generateUtilities('columns', 'cols', elementColumns),
@@ -255,10 +255,10 @@ module.exports = plugin(function({ addUtilities, addVariant }) {
 
     /* text-overflow */
     '.t-ellipsis': {
-      textAlign: 'ellipsis',
+      textOverflow: 'ellipsis',
     },
     '.t-clip': {
-      textAlign: 'clip',
+      textOverflow: 'clip',
     },
 
     /* text-tranform */
@@ -285,22 +285,22 @@ module.exports = plugin(function({ addUtilities, addVariant }) {
 
     /* === border === */
     /* border-style */
-    '.b-sol': {
+    '.bos-sol': {
       borderStyle: 'solid',
     },
-    '.b-dash': {
+    '.bos-dash': {
       borderStyle: 'dashed',
     },
-    '.b-dot': {
+    '.bos-dot': {
       borderStyle: 'dotted',
     },
-    '.b-dbl': {
+    '.bos-dbl': {
       borderStyle: 'double',
     },
-    '.b-hid': {
+    '.bos-hid': {
       borderStyle: 'hidden',
     },
-    '.b-no': {
+    '.bos-no': {
       borderStyle: 'none',
     },
     /* border-width */
@@ -321,10 +321,12 @@ module.exports = plugin(function({ addUtilities, addVariant }) {
     ...generateBorderRadiusForCorners('bor-b', ['bottom-left', 'bottom-right']),
     ...generateBorderRadiusForCorners('bor-l', ['top-left', 'bottom-left']),
     ...generateBorderRadiusForCorners('bor-r', ['top-right', 'bottom-right']),
+    /* border-color */
+    ...generateColorUtilities('border-color', 'boc'),
 
     /* === outline === */
     /* outline-color */
-    ...generateColorUtilities('outline-color', 'ol-c'),
+    ...generateColorUtilities('outline-color', 'olc'),
     /* outline-width */
     ...generateOutlineWidth('olw'),
     /* outline-style */

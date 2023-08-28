@@ -22,7 +22,7 @@ const displayValues = [
   ['no', 'none'],
 ]
 
-const positions = [
+const boxPositions = [
   ['c', 'center'],
   ['t', 'top'],
   ['b', 'bottom'],
@@ -483,7 +483,7 @@ const opacities = [
 
 module.exports = {
   displayValues,
-  positions,
+  boxPositions,
   objectFits,
   overflows,
   flexOrders,
