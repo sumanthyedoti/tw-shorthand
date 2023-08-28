@@ -1,3 +1,44 @@
+# Tailwind Shorthand
+A Tailwind shorthand plugin to be kind on line length.
+
+This little plugin born out of a little frustration from long growing line
+because of class-names. This is an attempt to make the utility short and handy. A tailwind shorthand.
+
+## benefit
+- Shorter line length, less to type, more visibility
+- Better semantics with CSS properties
+- ~30% reduction in total class-names size (not claiming any performance gains :D)
+----
+
+## The classes
+### pseudo-classes
+| Tailwind                 | Shorthand       |
+|--------------------------|-----------------|
+| `hover:` | `h:` |
+| `active` | `a:` |
+| `focus:` | `f:` |
+| `visited:` | `v:` |
+| `link:` | `l:` |
+| `checked:` | `c:` |
+| `disabled:` | `d:` |
+| `target:` | `t:` |
+| `empty:` | `e:` |
+| `optional:` | `o:` |
+| `fot:` | `first-of-type:` |
+| `lot:` | `last-of-type:` |
+| `oot:` | `last-of-type:` |
+| `oc:` | `only-child:` |
+### `aspect-ratio`
+| Tailwind                 | Shorthand       |
+|--------------------------|-----------------|
+| `aspect-auto` | `ar-au` |
+| `aspect-sqaure` | `ar-1/1` |
+| `aspect-video` | `ar-16/9` |
+|               | `ar-9/16` |
+|               | `ar-3/2` |
+|               | `ar-2/3` |
+|               | `ar-5/4` |
+|               | `ar-4/5` |
 ## Shorthand classes
 ### `aspect-ratio`
 | Tailwind                 | Shorthand       |

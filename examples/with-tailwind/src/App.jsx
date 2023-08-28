@@ -5,7 +5,7 @@ import Pricing from './components/Pricing'
 function App() {
   return (
     <>
-      {Array.from({ length: 10 }).map((_, i) => (
+      {Array.from({ length: 100 }).map((_, i) => (
         <div key={i}>
           <Workcation />
           <Testimonial />
