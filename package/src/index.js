@@ -43,9 +43,13 @@ const {
   placeItems,
   placeSelf,
   letterSpacings,
+  durations,
+  boxShadows,
+  dropShadows,
+  opacities,
 } = require('./values')
 
-module.exports = plugin(function ({ addUtilities, addVariant }) {
+module.exports = plugin(function({ addUtilities, addVariant }) {
   const newUtilities = {
     /* display */
     ...generateUtilities('display', 'd', displayValues),
@@ -430,6 +434,46 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
     ...generateTransformSkew('tr-sk', 'x'),
     ...generateTransformSkew('tr-sk', 'y'),
 
+    /* transition */
+    '.tr-no': {
+      transitionProperty: 'none',
+    },
+    '.tr-all': {
+      transitionProperty: 'all',
+      transitionTimingFunction: 'cubic-bezier(-1.4, 0, 0.2, 1)',
+      transitionDuration: '150ms',
+    },
+    '.tr': {
+      transitionProperty: 'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
+      transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+      transitionDuration: '150ms'
+    },
+    '.tr-c': {
+      transitionProperty: 'color, background-color, border-color, text-decoration-color, fill, stroke',
+      transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+      transitionDuration: '150ms'
+    },
+    '.tr-o': {
+      transitionProperty: 'opacity',
+      transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+      transitionDuration: '150ms'
+    },
+    '.tr-sh': {
+      transitionProperty: 'box-shadow',
+      transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+      transitionDuration: '150ms'
+    },
+    '.tr-tf': {
+      transitionProperty: 'transform',
+      transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+      transitionDuration: '150ms'
+    },
+
+    ...generateUtilities('transition-duration', 'du', durations),
+    ...generateUtilities('box-shadow', 'sh', boxShadows),
+    ...generateUtilities('filter', 'drop-sh', dropShadows),
+    ...generateUtilities('opacity', 'o', opacities),
+
     /* aspect-ratio */
     '.ar-au': {
       aspectRatio: 'auto',
@@ -456,6 +500,7 @@ module.exports = plugin(function ({ addUtilities, addVariant }) {
       aspectRatio: '5 / 4',
     },
   }
+
   addUtilities(newUtilities)
 
   /* variants */
