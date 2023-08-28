@@ -38,10 +38,10 @@ export default {
 | `target:` | `t:` |
 | `empty:` | `e:` |
 | `optional:` | `o:` |
-| `fot:` | `first-of-type:` |
-| `lot:` | `last-of-type:` |
-| `oot:` | `last-of-type:` |
-| `oc:` | `only-child:` |
+| `first-of-type:` | `fot:` |
+| `last-of-type:` | `lot:` |
+| `last-of-type:` | `oot:` |
+| `only-child:` | `oc:` |
 ### `aspect-ratio`
 | Tailwind                 | Shorthand       |
 |--------------------------|-----------------|
