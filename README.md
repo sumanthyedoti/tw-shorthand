@@ -1,8 +1,8 @@
 # Tailwind Shorthand
 A Tailwind shorthand plugin to be kind on line length.
 
-This little plugin born out of a little frustration from long growing line
-because of class-names. This is an attempt to make the utility short and handy. A tailwind shorthand.
+This plugin born out of a little frustration from long growing lines
+because of the lovely tailwind utility class-names. This is an attempt to make the utilities short and handy, a *tailwind shorthand*.
 
 ## benefit
 - Shorter line length, less to type, more visibility
