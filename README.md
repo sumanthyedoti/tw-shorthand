@@ -39,18 +39,6 @@ because of class-names. This is an attempt to make the utility short and handy. 
 |               | `ar-2/3` |
 |               | `ar-5/4` |
 |               | `ar-4/5` |
-## Shorthand classes
-### `aspect-ratio`
-| Tailwind                 | Shorthand       |
-|--------------------------|-----------------|
-| `aspect-auto` | `ar-au` |
-| `aspect-sqaure` | `ar-1/1` |
-| `aspect-video` | `ar-16/9` |
-|               | `ar-9/16` |
-|               | `ar-3/2` |
-|               | `ar-2/3` |
-|               | `ar-5/4` |
-|               | `ar-4/5` |
 ### flex-direction
 | Tailwind                 | Shorthand       |
 |--------------------------|-----------------|
@@ -282,6 +270,8 @@ because of class-names. This is an attempt to make the utility short and handy. 
 | `none` | `d-no` |
 ### box positions
 - `background-position`
+- `object-position`
+
 | Tailwind                 | Shorthand       |
 |--------------------------|-----------------|
 | `bg-center` | `bg-c` |
