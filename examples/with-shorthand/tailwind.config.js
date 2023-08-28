@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const shorthand = require('tw-shorthand')
+
 export default {
   content: [
     "./index.html",

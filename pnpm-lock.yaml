@@ -102,7 +102,7 @@ importers:
   playground:
     dependencies:
       tw-shorthand:
-        specifier: workspace:^1.0.0
+        specifier: workspace:^
         version: link:../package
     devDependencies:
       tailwindcss:

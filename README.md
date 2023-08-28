@@ -13,6 +13,15 @@ because of the lovely tailwind utility classes. This is an attempt to make the u
 ```
 npm install tw-shorthand@beta
 ```
+- add as tailwind plugin
+```
+const shorthand = require('tw-shorthand')
+
+export default {
+  ...
+  plugins: [shorthand],
+}
+```
 ----
 
 ## The shorthand classes
