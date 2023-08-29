@@ -1,19 +1,22 @@
-# Tailwind Shorthand
+## Tailwind Shorthand
 A Tailwind shorthand plugin to be kind on line length.
 
 This plugin was born out of a little frustration from long growing lines
 because of the lovely tailwind utility classes. This is an attempt to make the utilities short and handy, a *tailwind shorthand*.
 
-## benefits
+## Benefits
 - Shorter line length, less to type, more visibility
 - Better semantics with CSS properties
 - ~30% reduction in total class-names size (not claiming any performance gains :D)
+## Disadvantages
+- Reduces readability. *Enough reason not to use this.*
+- One more abstraction over tailwind
 
-## install
+## Install
 ```
 npm install tw-shorthand@beta
 ```
-- add as tailwind plugin
+- add as tailwind plugin in `tailwind.config.js`
 ```
 const shorthand = require('tw-shorthand')
 
